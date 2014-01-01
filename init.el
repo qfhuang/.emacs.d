@@ -47,7 +47,7 @@
 ;; yasnippet 0.6.1 on marmalade
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
-;; git clone https://github.com/capitaomorte/yasnippet.git
+;; git clone https://github.com/AndreaCrotti/yasnippet-snippets.git 
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-0.6.1/yasnippet-snippets")
 
 ;;auto-complete 1.4 on marmalade
@@ -133,7 +133,7 @@
 
 ;;sbcl+slime for common lisp
 ;;sudo apt-get install sbcl
-;;git clone https://github.com/nablaone/slime
+;;git submodule add git://github.com/nablaone/slime lisp/slime/
 (add-to-list 'load-path "~/.emacs.d/lisp/slime/")  ; your SLIME directory
 (setq inferior-lisp-program "/usr/bin/sbcl") ; your Lisp system
 (require 'slime)

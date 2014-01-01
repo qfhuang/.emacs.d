@@ -1,0 +1,6 @@
+[submodule "lisp/slime"]
+	path = lisp/slime
+	url = git://github.com/nablaone/slime
+[submodule "elpa/yasnippet-0.6.1/yasnippet-snippets"]
+	path = elpa/yasnippet-0.6.1/yasnippet-snippets
+	url = git://github.com/AndreaCrotti/yasnippet-snippets.git
