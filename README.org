@@ -1,0 +1,5 @@
+My emacs24 .emacs.d backup.
+
+#+BEGIN_SRC sh
+git cline --recursive https://github.com/qfhuang/.emacs.d.git
+#+END_SRC

@@ -47,7 +47,7 @@
 ;; yasnippet 0.6.1 on marmalade
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
-;; git clone https://github.com/AndreaCrotti/yasnippet-snippets.git 
+;; git submodule add git://github.com/AndreaCrotti/yasnippet-snippets.git elpa/yasnippet-0.6.1/yasnippet-snippets
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-0.6.1/yasnippet-snippets")
 
 ;;auto-complete 1.4 on marmalade
