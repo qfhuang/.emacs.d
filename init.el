@@ -234,7 +234,7 @@
                                       global-semantic-mru-bookmark-mode
 				      global-semantic-highlight-func-mode
 				      global-semantic-idle-local-symbol-highlight-mode
-				      global-semantic-highlight-edits-mode
+				      ;;global-semantic-highlight-edits-mode 高亮编缉痕迹
 				     
     ))  
     (semantic-mode 1)  
