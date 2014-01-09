@@ -105,18 +105,43 @@
   (interactive)
   (make-local-variable 'skeleton-pair-alist)
   (setq skeleton-pair-alist  '(
-    (?\' _ "\'")  ;单引号
-    (?\" _ "\"")　;双引号
-    (?\( _ ")")   
-    (?\[ _ "]")
+;;    (?\' _ "\'")  ;单引号
+;;    (?\" _ "\"")　;双引号
+;;    (?\( _ ")")   
+;;    (?\[ _ "]")
     (?{ > _ \n ?} >)))
   (setq skeleton-pair t)
-  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe))
+;;  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe))
+;;  (local-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
+;;  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+;;  (local-set-key (kbd "[") 'skeleton-pair-insert-maybe))
 (add-hook 'c-mode-hook 'my-c-mode-auto-pair)
+
+;;c-flow
+(require 'cflow-mode)
+(defvar cmd nil nil)
+(defvar cflow-buf nil nil)
+(defvar cflow-buf-name nil nil)
+ 
+(defun yyc/cflow-function (function-name)
+  "Get call graph of inputed function. "
+  (interactive "sFunction name:\n")
+ ; (interactive (list (car (senator-jump-interactive "Function name: "
+ ;                                                   nil nil nil))))
+  (setq cmd (format "cflow  -b --main=%s %s" function-name buffer-file-name))
+  (setq cflow-buf-name (format "**cflow-%s:%s**"
+                               (file-name-nondirectory buffer-file-name)
+                               function-name))
+  (setq cflow-buf (get-buffer-create cflow-buf-name))
+  (set-buffer cflow-buf)
+  (setq buffer-read-only nil)
+  (erase-buffer)
+  (insert (shell-command-to-string cmd))
+  (pop-to-buffer cflow-buf)
+  (goto-char (point-min))
+  (cflow-mode)
+  )
 
 ;; wrap text
 ;; printf();
@@ -265,7 +290,7 @@
   (add-to-list 'ac-sources 'ac-source-gtags)
   (add-to-list 'ac-sources 'ac-source-semantic))
 
-(add-hook 'c-mode-common-hook 'my-cedet-hook)
+(add-hook 'c-mode-hook 'my-cedet-hook) ;;使用 c-mode-common-hook 指针补全失效？
 
 ;;insall from melpa repository
 ;;(require 'xcscope)
