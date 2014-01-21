@@ -29,11 +29,12 @@
 (setq ibus-cursor-color '("red" "blue"))
 (custom-set-variables '(ibus-python-shell-command-name "python2"))
 
-;; elpa marmalade
+;; gnu-elpa marmalade melpa
 (require 'package)
 (add-to-list 'package-archives 
-    '("marmalade" .
-      "http://marmalade-repo.org/packages/"))
+    '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+    '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 ;; emmet-mode 1.0.5 on marmalade
@@ -143,3 +144,6 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/"))
 (require 'org-jekyll)
 (setq org-src-fontify-natively t)
+
+(require 'ecb)
+
