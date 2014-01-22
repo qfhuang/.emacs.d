@@ -1,9 +1,13 @@
 ;; emacs 24.3.50
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+
 (custom-set-faces
-;; custom-set-faces was added by Custom.
-;; If you edit it by hand, you could mess it up, so be careful.
-;; Your init file should contain only one such instance.
-;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal)))))
 
 ;; all backups goto ~/.backups instead in the current directory
@@ -18,6 +22,7 @@
     (set-fontset-font (frame-parameter nil 'font)
                       charset
                       (font-spec :family "Microsoft YaHei" :size 12)))
+
 ;; ibus-mode
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/ibus-el/"))
 (require 'ibus)
@@ -27,7 +32,6 @@
 (ibus-define-common-key ?\C-\s nil)
 (global-set-key (kbd "C-\\") 'ibus-toggle) ;;通过Ctrl+\切换输入法
 (setq ibus-cursor-color '("red" "blue"))
-(custom-set-variables '(ibus-python-shell-command-name "python2"))
 
 ;; gnu-elpa marmalade melpa
 (require 'package)
@@ -147,14 +151,20 @@
 
 (require 'ecb)
 
-;;cedet
-;;cedet setup - https://github.com/alexott/emacs-configs/blob/master/rc/emacs-rc-cedet.el
+;;cedet build-in
+;;cedet setup
+;;- https://github.com/alexott/emacs-configs/blob/master/rc/emacs-rc-cedet.el
+;;- http://emacser.com/built-in-cedet.htm
+;;- http://alexott.net/en/writings/emacs-devenv/EmacsCedet.html
 (require 'cedet) 
     (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode  
                                       global-semanticdb-minor-mode  
                                       global-semantic-idle-summary-mode  
                                       global-semantic-mru-bookmark-mode
 				      global-semantic-highlight-func-mode
+				      global-semantic-idle-local-symbol-highlight-mode
+				      global-semantic-highlight-edits-mode
+				     
     ))  
     (semantic-mode 1)  
     (global-semantic-show-parser-state-mode 1)  
@@ -186,6 +196,7 @@
 
 (add-hook 'c-mode-common-hook 'my-cedet-hook)
 
+;;insall from melpa repository
 ;;(require 'xcscope)
 (add-hook 'c-mode-common-hook '(lambda() (require 'xcscope)))
 (cscope-setup) ;;打开cscope-minor-mode,才能显示cscope菜单与使用C-c s绑定的快捷键
@@ -204,3 +215,39 @@
 (define-key global-map [(meta f10)] 'cscope-display-buffer-toggle)
 
 
+;;color-theme setup by M-x customize-themes
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
+ '(custom-enabled-themes (quote (tango)))
+ '(custom-safe-themes
+   (quote
+    ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
+ '(ecb-source-path (quote (("/" "/"))))
+ '(fci-rule-color "#2a2a2a")
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#d54e53")
+     (40 . "#e78c45")
+     (60 . "#e7c547")
+     (80 . "#b9ca4a")
+     (100 . "#70c0b1")
+     (120 . "#7aa6da")
+     (140 . "#c397d8")
+     (160 . "#d54e53")
+     (180 . "#e78c45")
+     (200 . "#e7c547")
+     (220 . "#b9ca4a")
+     (240 . "#70c0b1")
+     (260 . "#7aa6da")
+     (280 . "#c397d8")
+     (300 . "#d54e53")
+     (320 . "#e78c45")
+     (340 . "#e7c547")
+     (360 . "#b9ca4a"))))
+ '(vc-annotate-very-old-color nil))
