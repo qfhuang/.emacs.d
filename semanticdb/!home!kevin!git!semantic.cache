@@ -48,13 +48,7 @@
                 :arguments 
                   ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [851 856]))                  
                 :type "void")
-                nil [819 1071])
-            ("commit_pager_choice" function
-               (:typemodifiers ("static")
-                :arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1104 1109]))                  
-                :type "void")
-                nil [1072 1243])
+                nil [819 990])
             ("handle_options" function
                (:typemodifiers ("static")
                 :arguments 
@@ -62,62 +56,62 @@
                        (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [1271 1290])
+                        (reparse-symbol arg-sub-list) [1018 1037])
                     ("argc" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [1291 1301])
+                        (reparse-symbol arg-sub-list) [1038 1048])
                     ("envchanged" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [1302 1318]))                  
+                        (reparse-symbol arg-sub-list) [1049 1065]))                  
                 :type "int")
-                nil [1245 5590])
+                nil [992 5300])
             ("handle_alias" function
                (:typemodifiers ("static")
                 :arguments 
                   ( ("argcp" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [5616 5627])
+                        (reparse-symbol arg-sub-list) [5326 5337])
                     ("argv" variable
                        (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [5628 5647]))                  
+                        (reparse-symbol arg-sub-list) [5338 5357]))                  
                 :type "int")
-                nil [5592 7581])
-            ("RUN_SETUP" variable (:constant-flag t) nil [7591 7600])
-            ("RUN_SETUP_GENTLY" variable (:constant-flag t) nil [7617 7633])
-            ("USE_PAGER" variable (:constant-flag t) nil [7649 7658])
-            ("NEED_WORK_TREE" variable (:constant-flag t) nil [7802 7816])
+                nil [5302 7291])
+            ("RUN_SETUP" variable (:constant-flag t) nil [7301 7310])
+            ("RUN_SETUP_GENTLY" variable (:constant-flag t) nil [7327 7343])
+            ("USE_PAGER" variable (:constant-flag t) nil [7359 7368])
+            ("NEED_WORK_TREE" variable (:constant-flag t) nil [7512 7526])
             ("cmd_struct" type
                (:members 
                   ( ("cmd" variable
                        (:pointer 1
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol classsubparts) [7847 7863])
+                        (reparse-symbol classsubparts) [7557 7573])
                     ("fn" function
                        (:prototype-flag t
                         :function-pointer t
                         :arguments 
-                          ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [7875 7879])
+                          ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [7585 7589])
                             ("" variable
                                (:pointer 2
                                 :constant-flag t
                                 :type "char")
-                                (reparse-symbol arg-sub-list) [7880 7894])
+                                (reparse-symbol arg-sub-list) [7590 7604])
                             ("" variable
                                (:pointer 1
                                 :constant-flag t
                                 :type "char")
-                                (reparse-symbol arg-sub-list) [7895 7908]))                          
+                                (reparse-symbol arg-sub-list) [7605 7618]))                          
                         :type "int")
-                        (reparse-symbol classsubparts) [7865 7909])
-                    ("option" variable (:type "int") (reparse-symbol classsubparts) [7911 7922]))                  
+                        (reparse-symbol classsubparts) [7575 7619])
+                    ("option" variable (:type "int") (reparse-symbol classsubparts) [7621 7632]))                  
                 :type "struct")
-                nil [7826 7925])
+                nil [7536 7635])
             ("run_builtin" function
                (:typemodifiers ("static")
                 :arguments 
@@ -127,15 +121,15 @@
                              (:prototype t
                               :type "struct")
                               nil nil))
-                        (reparse-symbol arg-sub-list) [7950 7971])
-                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7972 7981])
+                        (reparse-symbol arg-sub-list) [7660 7681])
+                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7682 7691])
                     ("argv" variable
                        (:pointer 2
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [7982 8000]))                  
+                        (reparse-symbol arg-sub-list) [7692 7710]))                  
                 :type "int")
-                nil [7927 9326])
+                nil [7637 9036])
             ("commands" variable
                (:dereference 1
                 :typemodifiers ("static")
@@ -249,7 +243,7 @@
 	{ \"upload-archive--writer\", cmd_upload_archive_writer },
 	{ \"var\", cmd_var, RUN_SETUP_GENTLY },
 	{ \"verify-pack\", cmd_verify_pack },
-       { \"verify-tag\", cmd_verify_tag, RUN_SETUP },
+	{ \"verify-tag\", cmd_verify_tag, RUN_SETUP },
 	{ \"version\", cmd_version },
 	{ \"whatchanged\", cmd_whatchanged, RUN_SETUP },
 	{ \"write-tree\", cmd_write_tree, RUN_SETUP },
@@ -258,27 +252,27 @@
                      (:prototype t
                       :type "struct")
                       nil nil))
-                nil [9328 14396])
+                nil [9038 14100])
             ("is_builtin" function
                (:arguments 
                   ( ("s" variable
                        (:pointer 1
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [14413 14427]))                  
+                        (reparse-symbol arg-sub-list) [14117 14131]))                  
                 :type "int")
-                nil [14398 14575])
+                nil [14102 14279])
             ("handle_builtin" function
                (:typemodifiers ("static")
                 :arguments 
-                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [14604 14613])
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [14308 14317])
                     ("argv" variable
                        (:pointer 2
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [14614 14632]))                  
+                        (reparse-symbol arg-sub-list) [14318 14336]))                  
                 :type "void")
-                nil [14577 15220])
+                nil [14281 14924])
             ("execv_dashed_external" function
                (:typemodifiers ("static")
                 :arguments 
@@ -286,34 +280,34 @@
                        (:pointer 2
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [15256 15274]))                  
+                        (reparse-symbol arg-sub-list) [14960 14978]))                  
                 :type "void")
-                nil [15222 16044])
+                nil [14926 15748])
             ("run_argv" function
                (:typemodifiers ("static")
                 :arguments 
                   ( ("argcp" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [16066 16077])
+                        (reparse-symbol arg-sub-list) [15770 15781])
                     ("argv" variable
                        (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [16078 16097]))                  
+                        (reparse-symbol arg-sub-list) [15782 15801]))                  
                 :type "int")
-                nil [16046 16514])
+                nil [15750 16218])
             ("main" function
                (:arguments 
-                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [16526 16535])
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [16230 16239])
                     ("av" variable
                        (:pointer 2
                         :type "char")
-                        (reparse-symbol arg-sub-list) [16536 16546]))                  
+                        (reparse-symbol arg-sub-list) [16240 16250]))                  
                 :type "int")
-                nil [16517 18527]))          
+                nil [16221 18231]))          
       :file "git.c"
-      :pointmax 18528
+      :pointmax 18232
       :fsize 18231
       :lastmodtime '(21214 9766 17 828000)
       :unmatched-syntax nil
