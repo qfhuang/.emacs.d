@@ -1,0 +1,37 @@
+;; Object compat/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "compat/"
+  :tables
+  (list
+    (semanticdb-table "bswap.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("default_swab32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("val" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [372 385]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [334 520])
+            ("bswap32" variable (:constant-flag t) nil [615 622])
+            ("git_bswap32" function
+               (:typemodifiers ("static" "inline")
+                :arguments 
+                  ( ("x" variable (:type ("uint32_t" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [670 681]))                  
+                :type ("uint32_t" type (:type "class") nil nil))
+                nil [635 834])
+            ("ntohl" variable (:constant-flag t) nil [1020 1025])
+            ("htonl" variable (:constant-flag t) nil [1048 1053]))          
+      :file "bswap.h"
+      :pointmax 1076
+      :fsize 1075
+      :lastmodtime '(21214 9765 924017 828000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("bswap32" . ((symbol "git_bswap32" 623 . 634)))
+          ("ntohl" (spp-arg-list ("x") 1025 . 1028) . ((symbol "bswap32" 1029 . 1036) (semantic-list "(x)" 1036 . 1039)))
+          ("htonl" (spp-arg-list ("x") 1053 . 1056) . ((symbol "bswap32" 1057 . 1064) (semantic-list "(x)" 1064 . 1067)))
+          )
+))
+  :file "!home!kevin!git!compat!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -147,3 +147,43 @@
 
 (require 'ecb)
 
+;;cedet
+;;cedet setup - https://github.com/alexott/emacs-configs/blob/master/rc/emacs-rc-cedet.el
+(require 'cedet) 
+    (setq semantic-default-submodes '(global-semantic-idle-scheduler-mode  
+                                      global-semanticdb-minor-mode  
+                                      global-semantic-idle-summary-mode  
+                                      global-semantic-mru-bookmark-mode
+				      global-semantic-highlight-func-mode
+    ))  
+    (semantic-mode 1)  
+    (global-semantic-show-parser-state-mode 1)  
+
+(global-ede-mode 1)   ; Enable the Project management system
+
+;;; 快捷键
+(defun my-cedet-hook()
+  (local-set-key [(control return)] 'semantic-ia-complete-symbol)
+
+  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+  (local-set-key (kbd "M-n") 'semantic-ia-complete-symbol-menu)
+
+  (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
+  (local-set-key (kbd "M-/") 'semantic-complete-analyze-inline)
+
+  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
+  (local-set-key "\C-cd" 'semantic-ia-fast-jump)
+  (local-set-key "\C-cr" 'semantic-symref-symbol)
+  (local-set-key "\C-cR" 'semantic-symref)
+
+  ;;; c/c++ setting
+  (local-set-key "." 'semantic-complete-self-insert)
+  (local-set-key ">" 'semantic-complete-self-insert)
+
+  ;;; work with auto-complete
+  (add-to-list 'ac-sources 'ac-source-gtags)
+  (add-to-list 'ac-sources 'ac-source-semantic))
+
+(add-hook 'c-mode-common-hook 'my-cedet-hook)
+
+

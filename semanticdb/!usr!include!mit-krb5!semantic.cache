@@ -1,0 +1,17 @@
+;; Object mit-krb5/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mit-krb5/"
+  :tables
+  (list
+    (semanticdb-table "krb5.h"
+      :major-mode 'c-mode
+      :tags 
+        '( ("krb5/krb5.h" include (:system-flag t) nil [380 402]))          
+      :file "krb5.h"
+      :pointmax 403
+      :fsize 402
+      :lastmodtime '(20905 1721 0 0)
+      :unmatched-syntax nil))
+  :file "!usr!include!mit-krb5!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
