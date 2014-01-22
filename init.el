@@ -3,6 +3,9 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 
+(setq default-frame-alist
+      '((height . 40)(width . 120)))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
