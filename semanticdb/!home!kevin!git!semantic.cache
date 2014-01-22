@@ -30,88 +30,87 @@
 	   \"concept guides. See 'git help <command>' or 'git help <concept>'\\n\"
 	   \"to read about a specific subcommand or concept.\")"
                 :type "char")
-                nil [541 782])
+                nil [503 744])
             ("git_startup_info" variable
                (:typemodifiers ("static")
                 :type ("startup_info" type
                      (:prototype t
                       :type "struct")
                       nil nil))
-                nil [784 828])
+                nil [746 790])
             ("use_pager" variable
                (:typemodifiers ("static")
                 :default-value "-1"
                 :type "int")
-                nil [829 855])
+                nil [791 817])
             ("commit_pager_choice" function
                (:typemodifiers ("static")
                 :arguments 
-                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [889 894]))                  
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [851 856]))                  
                 :type "void")
-                nil [857 1028])
-            ("handle_options" function
-               (:typemodifiers ("static")
-                :arguments 
+                nil [819 990])
+            ("ions" function
+               (:arguments 
                   ( ("argv" variable
                        (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [1056 1075])
+                        (reparse-symbol arg-sub-list) [1018 1037])
                     ("argc" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [1076 1086])
+                        (reparse-symbol arg-sub-list) [1038 1048])
                     ("envchanged" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [1087 1103]))                  
+                        (reparse-symbol arg-sub-list) [1049 1065]))                  
                 :type "int")
-                nil [1030 5338])
+                nil [1013 5300])
             ("handle_alias" function
                (:typemodifiers ("static")
                 :arguments 
                   ( ("argcp" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [5364 5375])
+                        (reparse-symbol arg-sub-list) [5326 5337])
                     ("argv" variable
                        (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [5376 5395]))                  
+                        (reparse-symbol arg-sub-list) [5338 5357]))                  
                 :type "int")
-                nil [5340 7329])
-            ("RUN_SETUP" variable (:constant-flag t) nil [7339 7348])
-            ("RUN_SETUP_GENTLY" variable (:constant-flag t) nil [7365 7381])
-            ("USE_PAGER" variable (:constant-flag t) nil [7397 7406])
-            ("NEED_WORK_TREE" variable (:constant-flag t) nil [7550 7564])
+                nil [5302 7291])
+            ("RUN_SETUP" variable (:constant-flag t) nil [7301 7310])
+            ("RUN_SETUP_GENTLY" variable (:constant-flag t) nil [7327 7343])
+            ("USE_PAGER" variable (:constant-flag t) nil [7359 7368])
+            ("NEED_WORK_TREE" variable (:constant-flag t) nil [7512 7526])
             ("cmd_struct" type
                (:members 
                   ( ("cmd" variable
                        (:pointer 1
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol classsubparts) [7595 7611])
+                        (reparse-symbol classsubparts) [7557 7573])
                     ("fn" function
                        (:prototype-flag t
                         :function-pointer t
                         :arguments 
-                          ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [7623 7627])
+                          ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [7585 7589])
                             ("" variable
                                (:pointer 2
                                 :constant-flag t
                                 :type "char")
-                                (reparse-symbol arg-sub-list) [7628 7642])
+                                (reparse-symbol arg-sub-list) [7590 7604])
                             ("" variable
                                (:pointer 1
                                 :constant-flag t
                                 :type "char")
-                                (reparse-symbol arg-sub-list) [7643 7656]))                          
+                                (reparse-symbol arg-sub-list) [7605 7618]))                          
                         :type "int")
-                        (reparse-symbol classsubparts) [7613 7657])
-                    ("option" variable (:type "int") (reparse-symbol classsubparts) [7659 7670]))                  
+                        (reparse-symbol classsubparts) [7575 7619])
+                    ("option" variable (:type "int") (reparse-symbol classsubparts) [7621 7632]))                  
                 :type "struct")
-                nil [7574 7673])
+                nil [7536 7635])
             ("run_builtin" function
                (:typemodifiers ("static")
                 :arguments 
@@ -121,15 +120,15 @@
                              (:prototype t
                               :type "struct")
                               nil nil))
-                        (reparse-symbol arg-sub-list) [7698 7719])
-                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7720 7729])
+                        (reparse-symbol arg-sub-list) [7660 7681])
+                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7682 7691])
                     ("argv" variable
                        (:pointer 2
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [7730 7748]))                  
+                        (reparse-symbol arg-sub-list) [7692 7710]))                  
                 :type "int")
-                nil [7675 9137])
+                nil [7637 9036])
             ("commands" variable
                (:dereference 1
                 :typemodifiers ("static")
@@ -252,27 +251,27 @@
                      (:prototype t
                       :type "struct")
                       nil nil))
-                nil [9139 14201])
+                nil [9038 14100])
             ("is_builtin" function
                (:arguments 
                   ( ("s" variable
                        (:pointer 1
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [14218 14232]))                  
+                        (reparse-symbol arg-sub-list) [14117 14131]))                  
                 :type "int")
-                nil [14203 14380])
+                nil [14102 14279])
             ("handle_builtin" function
                (:typemodifiers ("static")
                 :arguments 
-                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [14409 14418])
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [14308 14317])
                     ("argv" variable
                        (:pointer 2
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [14419 14437]))                  
+                        (reparse-symbol arg-sub-list) [14318 14336]))                  
                 :type "void")
-                nil [14382 15025])
+                nil [14281 14924])
             ("execv_dashed_external" function
                (:typemodifiers ("static")
                 :arguments 
@@ -280,34 +279,34 @@
                        (:pointer 2
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [15061 15079]))                  
+                        (reparse-symbol arg-sub-list) [14960 14978]))                  
                 :type "void")
-                nil [15027 15849])
+                nil [14926 15748])
             ("run_argv" function
                (:typemodifiers ("static")
                 :arguments 
                   ( ("argcp" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [15871 15882])
+                        (reparse-symbol arg-sub-list) [15770 15781])
                     ("argv" variable
                        (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [15883 15902]))                  
+                        (reparse-symbol arg-sub-list) [15782 15801]))                  
                 :type "int")
-                nil [15851 16319])
+                nil [15750 16218])
             ("main" function
                (:arguments 
-                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [16331 16340])
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [16230 16239])
                     ("av" variable
                        (:pointer 2
                         :type "char")
-                        (reparse-symbol arg-sub-list) [16341 16351]))                  
+                        (reparse-symbol arg-sub-list) [16240 16250]))                  
                 :type "int")
-                nil [16322 18332]))          
+                nil [16221 18231]))          
       :file "git.c"
-      :pointmax 18333
+      :pointmax 18232
       :fsize 18231
       :lastmodtime '(21214 9766 17 828000)
       :unmatched-syntax nil
@@ -14698,6 +14697,102 @@
           ("STRING_LIST_INIT_DUP" . ((semantic-list "{ NULL, 0, 0, 1 }" 413 . 430)))
           ("STRING_LIST_H")
           ("STRING_LIST_INIT_NODUP" . ((semantic-list "{ NULL, 0, 0, 0 }" 364 . 381)))
+          )
+)
+    (semanticdb-table "exec_cmd.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("cache.h" include nil nil [1 19])
+            ("exec_cmd.h" include nil nil [20 41])
+            ("quote.h" include nil nil [42 60])
+            ("MAX_ARGS" variable (:constant-flag t) nil [69 77])
+            ("argv_exec_path" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :type "char")
+                nil [82 116])
+            ("argv0_path" variable
+               (:pointer 1
+                :typemodifiers ("static")
+                :constant-flag t
+                :type "char")
+                nil [117 147])
+            ("system_path" function
+               (:pointer 1
+                :constant-flag t
+                :arguments 
+                  ( ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [173 190]))                  
+                :type "char")
+                nil [149 898])
+            ("c_path" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [1655 1660]))                  
+                :type "int")
+                nil [1648 1842])
+            ("add_path" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("out" variable
+                       (:pointer 1
+                        :type ("strbuf" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [1865 1884])
+                    ("path" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [1885 1902]))                  
+                :type "void")
+                nil [1844 2073])
+            ("setup_path" function
+               (:arguments 
+                  ( ("" variable (:type "void") (reparse-symbol arg-sub-list) [2091 2096]))                  
+                :type "void")
+                nil [2075 2420])
+            ("prepare_git_cmd" function
+               (:pointer 2
+                :constant-flag t
+                :arguments 
+                  ( ("argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2451 2469]))                  
+                :type "char")
+                nil [2422 2741])
+            ("execv_git_cmd" function
+               (:arguments 
+                  ( ("argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [2761 2779]))                  
+                :type "int")
+                nil [2743 3046])
+            ("execl_git_cmd" function
+               (:arguments 
+                  ( ("cmd" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [3067 3083])
+                    ("..." variable (:type "vararg") (reparse-symbol arg-sub-list) [3083 3087]))                  
+                :type "int")
+                nil [3049 3455]))          
+      :file "exec_cmd.c"
+      :pointmax 3456
+      :fsize 3307
+      :lastmodtime '(21214 9765 968017 829000)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("MAX_ARGS" . ((number "32" 78 . 80)))
           )
 ))
   :file "!home!kevin!git!semantic.cache"

@@ -1,56 +1,64 @@
-((("commit_pager_choice" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("cmd" .
-   [1 1 0])
-  ("git_usage_string" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
-  ("char" .
-   [1 0 0 0])
-  ("const" .
-   [0 0 0 0 1])
-  ("ac-source-semantic" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
-  ("ac-source-gtags" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
-  ("ac-sources" .
-   [0 0 0 0 0 0 0 2 0 1])
-  ("ecb" .
-   [2 0 0])
-  ("struct" .
-   [1 0 0 0 0 0])
-  ("../images/" .
-   [0 0 0 1 0 0 0 0 0 0])
-  ("file-name-nondirectory" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0])
-  ("jekyll-posts-dir" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
-  ("m" .
+((("ascope" .
+   [0 0 0 0 0 1])
+  ("a" .
    [1])
-  ("org-publish" .
-   [0 0 0 0 0 0 0 0 0 0 2])
-  ("require" .
-   [0 0 0 2 1 0 2])
-  ("org-mode" .
-   [1 0 0 0 0 0 0 0])
-  ("jekyll-draft" .
-   [0 0 0 0 0 0 0 0 0 1 0 0])
-  ("jekyll-drafts-dir" .
-   [0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0])
-  ("setq" .
-   [1 0 0 0])
-  ("ecb-auto-activate" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("load-file" .
+  ("cedet" .
+   [0 0 0 0 1])
+  ("d" .
+   [1])
+  ("define" .
+   [0 0 0 0 1 0])
+  ("ecb-autoloads" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("load-path" .
    [0 0 0 0 0 0 0 1 0])
   ("add-to-list" .
    [0 0 0 0 0 0 1 0 0 1 1])
-  ("load-path" .
+  ("load-file" .
    [0 0 0 0 0 0 0 1 0])
-  ("ecb-autoloads" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("define" .
-   [0 0 0 0 1 0])
-  ("d" .
+  ("ecb-auto-activate" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("setq" .
+   [1 0 0 0])
+  ("jekyll-drafts-dir" .
+   [0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0])
+  ("jekyll-draft" .
+   [0 0 0 0 0 0 0 0 0 1 0 0])
+  ("org-mode" .
+   [1 0 0 0 0 0 0 0])
+  ("require" .
+   [0 0 0 4 1 0 3])
+  ("org-publish" .
+   [0 0 0 0 0 0 0 0 0 0 2])
+  ("m" .
    [1])
-  ("cedet" .
-   [0 0 0 0 1])))
+  ("jekyll-posts-dir" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0])
+  ("file-name-nondirectory" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("../images/" .
+   [0 0 0 1 0 0 0 0 0 0])
+  ("struct" .
+   [1 0 0 0 0 0])
+  ("ecb" .
+   [2 0 0])
+  ("ac-sources" .
+   [0 0 0 0 0 0 0 2 0 1])
+  ("ac-source-gtags" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0])
+  ("ac-source-semantic" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("const" .
+   [0 0 0 0 1])
+  ("char" .
+   [1 0 0 0])
+  ("git_usage_string" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("cmd" .
+   [1 1 0])
+  ("commit_pager_choice" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("xscheme" .
+   [0 0 0 1 0 0 0])
+  ("cscope-setup" .
+   [0 0 0 0 0 0 0 0 0 1 0 0])))
