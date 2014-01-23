@@ -3,30 +3,27 @@
 (semanticdb-project-database-file "kevin/"
   :tables
   (list
-    (semanticdb-table "git.git.c"
+
+    (semanticdb-table "text.c"
       :major-mode 'c-mode
       :tags 
-        '( ("gdt_descript" variable (:constant-flag t) nil [9 21])
-            ("test" type
-               (:members 
-                  ( ("a" variable
-                       (:default-value "1"
-                        :type "int")
-                        (reparse-symbol classsubparts) [43 53])
-                    ("p" variable
+        '( ("handle_alias" function
+               (:typemodifiers ("static")
+                :arguments 
+                  ( ("argcp" variable
                        (:pointer 1
-                        :default-value "&a"
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [25 36])
+                    ("argv" variable
+                       (:pointer 3
+                        :constant-flag t
                         :type "char")
-                        (reparse-symbol classsubparts) [56 69]))                  
-                :type "struct")
-                nil [27 77]))          
-      :file "git.git.c"
-      :pointmax 77
-      :unmatched-syntax nil
-      :lexical-table 
-        '(("gdt_descript" . ((number "000" 22 . 25)))
-          )
-))
+                        (reparse-symbol arg-sub-list) [37 56]))                  
+                :type "int")
+                nil [1 1990]))          
+      :file "text.c"
+      :pointmax 1991
+      :unmatched-syntax nil))
   :file "!home!kevin!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")

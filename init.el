@@ -26,6 +26,7 @@
                       charset
                       (font-spec :family "Microsoft YaHei" :size 12)))
 
+
 ;; ibus-mode
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp/ibus-el/"))
 (require 'ibus)
@@ -74,6 +75,25 @@
 ;; c-style comment for asm-mode 
 (add-hook 'asm-mode-hook 
       (lambda () (setq comment-start "/* " comment-end " */")))
+
+;; c-style setup http://arttecher.com/blog/2013/09/20/linux-kernel-coding-style/
+(defun linux-c-mode ()
+"C mode with adjusted defaults for use with the Linux kernel."
+(interactive)
+(c-mode)
+(c-set-style "K&R")
+(setq tab-width 8)
+(setq indent-tabs-mode t)
+(setq c-basic-offset 8))
+
+(add-hook 'c-mode-hook 'turn-on-auto-fill)
+(add-hook 'c++-mode-hook 'turn-on-auto-fill)
+;;http://docs.huihoo.com/homepage/shredderyin/emacs_fill.html
+(setq adaptive-fill-regexp "[ \t]+\\|[ \t]*\\([0-9]+\\.\\|\\*+\\)[ \t]*")
+(setq adaptive-fill-first-line-regexp "^\\* *$")
+
+(add-to-list 'auto-mode-alist '("\.c$" . linux-c-mode))
+
 
 ;; always show line numbers    
 (global-linum-mode t) 
@@ -152,6 +172,8 @@
 (require 'org-jekyll)
 (setq org-src-fontify-natively t)
 
+;; install from melpa forked by alexott
+;; solve the version depend on cedet
 (require 'ecb)
 
 ;;cedet build-in
@@ -254,3 +276,4 @@
      (340 . "#e7c547")
      (360 . "#b9ca4a"))))
  '(vc-annotate-very-old-color nil))
+(put 'upcase-region 'disabled nil)
