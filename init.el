@@ -59,6 +59,7 @@
 ;; git submodule add git://github.com/AndreaCrotti/yasnippet-snippets.git elpa/yasnippet-0.6.1/yasnippet-snippets
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-0.6.1/yasnippet-snippets")
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-0.6.1/snippets")
+(yas/load-directory "~/.emacs.d/lisp/snippets") ;;自定义的模板保存路径
 
 ;;auto-complete 1.4 on marmalade
 (require 'auto-complete-config)
@@ -96,25 +97,48 @@
 (add-to-list 'auto-mode-alist '("\.c$" . linux-c-mode))
 (show-paren-mode t)
 
-;;C mode 括号自动补全半边 http://ann77.emacser.com/Emacs/EmacsAutoInsertBrace.html
+;;C mode 括号自动补全半边
+;;http://ann77.emacser.com/Emacs/EmacsAutoInsertBrace.html
+;;http://forum.ubuntu.org.cn/viewtopic.php?f=68&t=363635
 (add-hook 'c-mode-hook 'hs-minor-mode)
 (defun my-c-mode-auto-pair ()
   (interactive)
   (make-local-variable 'skeleton-pair-alist)
   (setq skeleton-pair-alist  '(
-    (?` ?` _ "''")
-    (?\( _ ")")
+    (?\' _ "\'")  ;单引号
+    (?\" _ "\"")　;双引号
+    (?\( _ ")")   
     (?\[ ?  _ " ]")
-    (?{ \n > _ \n ?} >)))
+    (?{ > _ \n ?} >)))
   (setq skeleton-pair t)
   (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
   (local-set-key (kbd "{") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "`") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "\'") 'skeleton-pair-insert-maybe)
+  (local-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
   (local-set-key (kbd "[") 'skeleton-pair-insert-maybe))
 (add-hook 'c-mode-hook 'my-c-mode-auto-pair)
 
+;; wrap text
+;; printf();
+;; like this
+;; for() { printf();} by define
+(defun wrap-text (b e txt)
+  "simple wrapper"
+  (interactive "r\nMEnter text to wrap with: ")
+  (save-restriction
+    (narrow-to-region b e)
+    (goto-char (point-min))
+    (insert txt)
+    (insert " {\n")
+    (goto-char (point-max))
+    (insert "\n}")
+    (setq e2 (point)))
+  (indent-region b e2 nil))
+ 
+(global-set-key (kbd "C-x M-w") 'wrap-text)
 
-;; always show line numbers    
+
+;; ALWAYS SHOW LINE NUMBERS    
 (global-linum-mode t) 
 (setq linum-format "%d")  ;set format
 

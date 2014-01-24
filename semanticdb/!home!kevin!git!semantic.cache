@@ -16,11 +16,19 @@
             ("git_usage_string" variable
                (:dereference 1
                 :constant-flag t
+                :default-value "\"git [--version] [--help] [-C <path>] [-c name=value]\\n\"
+	\"           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\\n\"
+	\"           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]\\n\"
+	\"           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\\n\"
+	\"           <command> [<args>]\""
                 :type "char")
                 nil [146 501])
             ("git_more_info_string" variable
                (:dereference 1
                 :constant-flag t
+                :default-value "N_(\"'git help -a' and 'git help -g' lists available subcommands and some\\n\"
+	   \"concept guides. See 'git help <command>' or 'git help <concept>'\\n\"
+	   \"to read about a specific subcommand or concept.\")"
                 :type "char")
                 nil [503 744])
             ("git_startup_info" variable
@@ -32,6 +40,7 @@
                 nil [746 790])
             ("use_pager" variable
                (:typemodifiers ("static")
+                :default-value "-1"
                 :type "int")
                 nil [791 817])
             ("commit_pager_choice" function
@@ -47,49 +56,62 @@
                        (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [1026 1045])
+                        (reparse-symbol arg-sub-list) [1018 1037])
                     ("argc" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [1046 1056])
+                        (reparse-symbol arg-sub-list) [1038 1048])
                     ("envchanged" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [1057 1073]))                  
+                        (reparse-symbol arg-sub-list) [1049 1065]))                  
                 :type "int")
-                nil [1000 5308])
+                nil [992 5317])
             ("handle_alias" function
                (:typemodifiers ("static")
                 :arguments 
                   ( ("argcp" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [5334 5345])
+                        (reparse-symbol arg-sub-list) [5343 5354])
                     ("argv" variable
                        (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [5346 5365]))                  
+                        (reparse-symbol arg-sub-list) [5355 5374]))                  
                 :type "int")
-                nil [5310 7299])
-            ("RUN_SETUP" variable (:constant-flag t) nil [7309 7318])
-            ("RUN_SETUP_GENTLY" variable (:constant-flag t) nil [7335 7351])
-            ("USE_PAGER" variable (:constant-flag t) nil [7367 7376])
-            ("NEED_WORK_TREE" variable (:constant-flag t) nil [7520 7534])
+                nil [5319 7308])
+            ("RUN_SETUP" variable (:constant-flag t) nil [7318 7327])
+            ("RUN_SETUP_GENTLY" variable (:constant-flag t) nil [7344 7360])
+            ("USE_PAGER" variable (:constant-flag t) nil [7376 7385])
+            ("NEED_WORK_TREE" variable (:constant-flag t) nil [7529 7543])
             ("cmd_struct" type
                (:members 
                   ( ("cmd" variable
                        (:pointer 1
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol classsubparts) [7565 7581])
-                    ("fn" variable
-                       (:functionpointer-flag t
+                        (reparse-symbol classsubparts) [7574 7590])
+                    ("fn" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [7602 7606])
+                            ("" variable
+                               (:pointer 2
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7607 7621])
+                            ("" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7622 7635]))                          
                         :type "int")
-                        (reparse-symbol classsubparts) [7583 7627])
-                    ("option" variable (:type "int") (reparse-symbol classsubparts) [7629 7640]))                  
+                        (reparse-symbol classsubparts) [7592 7636])
+                    ("option" variable (:type "int") (reparse-symbol classsubparts) [7638 7649]))                  
                 :type "struct")
-                nil [7544 7643])
+                nil [7553 7652])
             ("run_builtin" function
                (:typemodifiers ("static")
                 :arguments 
@@ -99,43 +121,158 @@
                              (:prototype t
                               :type "struct")
                               nil nil))
-                        (reparse-symbol arg-sub-list) [7668 7689])
-                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7690 7699])
+                        (reparse-symbol arg-sub-list) [7677 7698])
+                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7699 7708])
                     ("argv" variable
                        (:pointer 2
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [7700 7718]))                  
+                        (reparse-symbol arg-sub-list) [7709 7727]))                  
                 :type "int")
-                nil [7645 9044])
+                nil [7654 9053])
             ("commands" variable
                (:dereference 1
                 :typemodifiers ("static")
+                :default-value "{
+	{ \"add\", cmd_add, RUN_SETUP | NEED_WORK_TREE },
+	{ \"annotate\", cmd_annotate, RUN_SETUP },
+	{ \"apply\", cmd_apply, RUN_SETUP_GENTLY },
+	{ \"archive\", cmd_archive },
+	{ \"bisect--helper\", cmd_bisect__helper, RUN_SETUP },
+	{ \"blame\", cmd_blame, RUN_SETUP },
+	{ \"branch\", cmd_branch, RUN_SETUP },
+	{ \"bundle\", cmd_bundle, RUN_SETUP_GENTLY },
+	{ \"cat-file\", cmd_cat_file, RUN_SETUP },
+	{ \"check-attr\", cmd_check_attr, RUN_SETUP },
+	{ \"check-ignore\", cmd_check_ignore, RUN_SETUP | NEED_WORK_TREE },
+	{ \"check-mailmap\", cmd_check_mailmap, RUN_SETUP },
+	{ \"check-ref-format\", cmd_check_ref_format },
+	{ \"checkout\", cmd_checkout, RUN_SETUP | NEED_WORK_TREE },
+	{ \"checkout-index\", cmd_checkout_index,
+		RUN_SETUP | NEED_WORK_TREE},
+	{ \"cherry\", cmd_cherry, RUN_SETUP },
+	{ \"cherry-pick\", cmd_cherry_pick, RUN_SETUP | NEED_WORK_TREE },
+	{ \"clean\", cmd_clean, RUN_SETUP | NEED_WORK_TREE },
+	{ \"clone\", cmd_clone },
+	{ \"column\", cmd_column, RUN_SETUP_GENTLY },
+	{ \"commit\", cmd_commit, RUN_SETUP | NEED_WORK_TREE },
+	{ \"commit-tree\", cmd_commit_tree, RUN_SETUP },
+	{ \"config\", cmd_config, RUN_SETUP_GENTLY },
+	{ \"count-objects\", cmd_count_objects, RUN_SETUP },
+	{ \"credential\", cmd_credential, RUN_SETUP_GENTLY },
+	{ \"describe\", cmd_describe, RUN_SETUP },
+	{ \"diff\", cmd_diff },
+	{ \"diff-files\", cmd_diff_files, RUN_SETUP | NEED_WORK_TREE },
+	{ \"diff-index\", cmd_diff_index, RUN_SETUP },
+	{ \"diff-tree\", cmd_diff_tree, RUN_SETUP },
+	{ \"fast-export\", cmd_fast_export, RUN_SETUP },
+	{ \"fetch\", cmd_fetch, RUN_SETUP },
+	{ \"fetch-pack\", cmd_fetch_pack, RUN_SETUP },
+	{ \"fmt-merge-msg\", cmd_fmt_merge_msg, RUN_SETUP },
+	{ \"for-each-ref\", cmd_for_each_ref, RUN_SETUP },
+	{ \"format-patch\", cmd_format_patch, RUN_SETUP },
+	{ \"fsck\", cmd_fsck, RUN_SETUP },
+	{ \"fsck-objects\", cmd_fsck, RUN_SETUP },
+	{ \"gc\", cmd_gc, RUN_SETUP },
+	{ \"get-tar-commit-id\", cmd_get_tar_commit_id },
+	{ \"grep\", cmd_grep, RUN_SETUP_GENTLY },
+	{ \"hash-object\", cmd_hash_object },
+	{ \"help\", cmd_help },
+	{ \"index-pack\", cmd_index_pack, RUN_SETUP_GENTLY },
+	{ \"init\", cmd_init_db },
+	{ \"init-db\", cmd_init_db },
+	{ \"log\", cmd_log, RUN_SETUP },
+	{ \"ls-files\", cmd_ls_files, RUN_SETUP },
+	{ \"ls-remote\", cmd_ls_remote, RUN_SETUP_GENTLY },
+	{ \"ls-tree\", cmd_ls_tree, RUN_SETUP },
+	{ \"mailinfo\", cmd_mailinfo },
+	{ \"mailsplit\", cmd_mailsplit },
+	{ \"merge\", cmd_merge, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-base\", cmd_merge_base, RUN_SETUP },
+	{ \"merge-file\", cmd_merge_file, RUN_SETUP_GENTLY },
+	{ \"merge-index\", cmd_merge_index, RUN_SETUP },
+	{ \"merge-ours\", cmd_merge_ours, RUN_SETUP },
+	{ \"merge-recursive\", cmd_merge_recursive, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-recursive-ours\", cmd_merge_recursive, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-recursive-theirs\", cmd_merge_recursive, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-subtree\", cmd_merge_recursive, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-tree\", cmd_merge_tree, RUN_SETUP },
+	{ \"mktag\", cmd_mktag, RUN_SETUP },
+	{ \"mktree\", cmd_mktree, RUN_SETUP },
+	{ \"mv\", cmd_mv, RUN_SETUP | NEED_WORK_TREE },
+	{ \"name-rev\", cmd_name_rev, RUN_SETUP },
+	{ \"notes\", cmd_notes, RUN_SETUP },
+	{ \"pack-objects\", cmd_pack_objects, RUN_SETUP },
+	{ \"pack-redundant\", cmd_pack_redundant, RUN_SETUP },
+	{ \"pack-refs\", cmd_pack_refs, RUN_SETUP },
+	{ \"patch-id\", cmd_patch_id },
+	{ \"pickaxe\", cmd_blame, RUN_SETUP },
+	{ \"prune\", cmd_prune, RUN_SETUP },
+	{ \"prune-packed\", cmd_prune_packed, RUN_SETUP },
+	{ \"push\", cmd_push, RUN_SETUP },
+	{ \"read-tree\", cmd_read_tree, RUN_SETUP },
+	{ \"receive-pack\", cmd_receive_pack },
+	{ \"reflog\", cmd_reflog, RUN_SETUP },
+	{ \"remote\", cmd_remote, RUN_SETUP },
+	{ \"remote-ext\", cmd_remote_ext },
+	{ \"remote-fd\", cmd_remote_fd },
+	{ \"repack\", cmd_repack, RUN_SETUP },
+	{ \"replace\", cmd_replace, RUN_SETUP },
+	{ \"rerere\", cmd_rerere, RUN_SETUP },
+	{ \"reset\", cmd_reset, RUN_SETUP },
+	{ \"rev-list\", cmd_rev_list, RUN_SETUP },
+	{ \"rev-parse\", cmd_rev_parse },
+	{ \"revert\", cmd_revert, RUN_SETUP | NEED_WORK_TREE },
+	{ \"rm\", cmd_rm, RUN_SETUP },
+	{ \"send-pack\", cmd_send_pack, RUN_SETUP },
+	{ \"shortlog\", cmd_shortlog, RUN_SETUP_GENTLY | USE_PAGER },
+	{ \"show\", cmd_show, RUN_SETUP },
+	{ \"show-branch\", cmd_show_branch, RUN_SETUP },
+	{ \"show-ref\", cmd_show_ref, RUN_SETUP },
+	{ \"stage\", cmd_add, RUN_SETUP | NEED_WORK_TREE },
+	{ \"status\", cmd_status, RUN_SETUP | NEED_WORK_TREE },
+	{ \"stripspace\", cmd_stripspace },
+	{ \"symbolic-ref\", cmd_symbolic_ref, RUN_SETUP },
+	{ \"tag\", cmd_tag, RUN_SETUP },
+	{ \"unpack-file\", cmd_unpack_file, RUN_SETUP },
+	{ \"unpack-objects\", cmd_unpack_objects, RUN_SETUP },
+	{ \"update-index\", cmd_update_index, RUN_SETUP },
+	{ \"update-ref\", cmd_update_ref, RUN_SETUP },
+	{ \"update-server-info\", cmd_update_server_info, RUN_SETUP },
+	{ \"upload-archive\", cmd_upload_archive },
+	{ \"upload-archive--writer\", cmd_upload_archive_writer },
+	{ \"var\", cmd_var, RUN_SETUP_GENTLY },
+	{ \"verify-pack\", cmd_verify_pack },
+	{ \"verify-tag\", cmd_verify_tag, RUN_SETUP },
+	{ \"version\", cmd_version },
+	{ \"whatchanged\", cmd_whatchanged, RUN_SETUP },
+	{ \"write-tree\", cmd_write_tree, RUN_SETUP },
+}"
                 :type ("cmd_struct" type
                      (:prototype t
                       :type "struct")
                       nil nil))
-                nil [9046 14108])
+                nil [9055 14117])
             ("is_builtin" function
                (:arguments 
                   ( ("s" variable
                        (:pointer 1
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [14125 14139]))                  
+                        (reparse-symbol arg-sub-list) [14134 14148]))                  
                 :type "int")
-                nil [14110 14287])
+                nil [14119 14296])
             ("handle_builtin" function
                (:typemodifiers ("static")
                 :arguments 
-                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [14316 14325])
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [14325 14334])
                     ("argv" variable
                        (:pointer 2
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [14326 14344]))                  
+                        (reparse-symbol arg-sub-list) [14335 14353]))                  
                 :type "void")
-                nil [14289 14932])
+                nil [14298 14941])
             ("execv_dashed_external" function
                (:typemodifiers ("static")
                 :arguments 
@@ -143,36 +280,36 @@
                        (:pointer 2
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [14968 14986]))                  
+                        (reparse-symbol arg-sub-list) [14977 14995]))                  
                 :type "void")
-                nil [14934 15756])
+                nil [14943 15765])
             ("run_argv" function
                (:typemodifiers ("static")
                 :arguments 
                   ( ("argcp" variable
                        (:pointer 1
                         :type "int")
-                        (reparse-symbol arg-sub-list) [15778 15789])
+                        (reparse-symbol arg-sub-list) [15787 15798])
                     ("argv" variable
                        (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [15790 15809]))                  
+                        (reparse-symbol arg-sub-list) [15799 15818]))                  
                 :type "int")
-                nil [15758 16226])
+                nil [15767 16235])
             ("main" function
                (:arguments 
-                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [16238 16247])
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [16247 16256])
                     ("av" variable
                        (:pointer 2
                         :type "char")
-                        (reparse-symbol arg-sub-list) [16248 16258]))                  
+                        (reparse-symbol arg-sub-list) [16257 16267]))                  
                 :type "int")
-                nil [16229 18239]))          
+                nil [16238 18248]))          
       :file "git.c"
-      :pointmax 18232
+      :pointmax 18249
       :fsize 18231
-      :lastmodtime '(21197 64533 908716 359000)
+      :lastmodtime '(21214 9766 17 828000)
       :unmatched-syntax nil
       :lexical-table 
         '(("RUN_SETUP" . ((semantic-list "(1<<0)" 7312 . 7318)))
@@ -2110,7 +2247,7 @@
       :file "builtin.h"
       :pointmax 8714
       :fsize 8713
-      :lastmodtime '(21197 64533 672716 368000)
+      :lastmodtime '(21214 9765 896017 826000)
       :unmatched-syntax nil
       :lexical-table 
         '(("DEFAULT_MERGE_LOG_LEN" . ((number "20" 157 . 159)))
@@ -8191,7 +8328,7 @@
       :file "cache.h"
       :pointmax 49260
       :fsize 49259
-      :lastmodtime '(21197 64533 760716 363000)
+      :lastmodtime '(21214 9765 920017 827000)
       :unmatched-syntax '((TYPEDEF 40494 . 40501) (TYPEDEF 36972 . 36979) (punctuation 36014 . 36015) (number 36013 . 36014) (semantic-list #("(&the_index, (flags), NULL, NULL, NULL)" 0 1 (macros (("flags")))) 35999 . 36013) (symbol "refresh_index" 35999 . 36013) (punctuation 35994 . 35995) (number 35993 . 35994) (punctuation 35992 . 35993) (symbol 35985 . 35992) (punctuation 35980 . 35981) (number 35979 . 35980) (punctuation 35978 . 35979) (symbol 35973 . 35978) (punctuation 35968 . 35969) (number 35967 . 35968) (punctuation 35966 . 35967) (symbol 35961 . 35966) (UNSIGNED 35952 . 35960) (TYPEDEF 30332 . 30339) (TEMPLATE 25102 . 25110) (TEMPLATE 25039 . 25047) (symbol 19763 . 19771) (EXTERN 19756 . 19762) (semantic-list #("((ce)->ce_namelen)" 0 1 (macros (("ce")))) 3455 . 3466) (INT 3451 . 3454) (UNSIGNED 3442 . 3450) (symbol 173 . 184) (symbol 165 . 172) (punctuation 164 . 165))
       :lexical-table 
         '(("DT_UNKNOWN" . ((number "0" 1295 . 1296)))
@@ -8483,7 +8620,7 @@
       :file "exec_cmd.h"
       :pointmax 510
       :fsize 509
-      :lastmodtime '(21197 64533 864716 361000)
+      :lastmodtime '(21214 9765 968017 829000)
       :unmatched-syntax '((symbol 361 . 382))
       :lexical-table 
         '(("GIT_EXEC_CMD_H")
@@ -8669,7 +8806,7 @@
       :file "help.h"
       :pointmax 1116
       :fsize 1115
-      :lastmodtime '(21197 64534 44716 353000)
+      :lastmodtime '(21214 9766 28017 829000)
       :unmatched-syntax nil
       :lexical-table 
         '(("HELP_H")
@@ -8985,7 +9122,7 @@
       :file "quote.h"
       :pointmax 2850
       :fsize 2849
-      :lastmodtime '(21197 64534 272716 346000)
+      :lastmodtime '(21214 9766 92017 830000)
       :unmatched-syntax nil
       :lexical-table 
         '(("QUOTE_H")
@@ -9206,7 +9343,7 @@
       :file "run-command.h"
       :pointmax 2968
       :fsize 2967
-      :lastmodtime '(21197 64534 312716 344000)
+      :lastmodtime '(21214 9766 116017 831000)
       :unmatched-syntax '((symbol 1513 . 1534))
       :lexical-table 
         '(("RUN_USING_SHELL" . ((number "16" 1797 . 1799)))
@@ -10921,7 +11058,7 @@
       :file "commit.h"
       :pointmax 10417
       :fsize 10416
-      :lastmodtime '(21197 64533 764716 363000)
+      :lastmodtime '(21214 9765 924017 828000)
       :unmatched-syntax '((TYPEDEF 5561 . 5568))
       :lexical-table 
         '(("COMMIT_H")
@@ -11694,7 +11831,7 @@
       :file "git-compat-util.h"
       :pointmax 18589
       :fsize 18588
-      :lastmodtime '(21197 64533 868716 360000)
+      :lastmodtime '(21214 9765 972017 828000)
       :unmatched-syntax '((TEMPLATE 13872 . 13880) (TEMPLATE 13822 . 13830) (TEMPLATE 13780 . 13788) (TYPEDEF 13065 . 13072) (semantic-list 2366 . 2378) (symbol 2359 . 2366) (punctuation 2358 . 2359) (punctuation 2356 . 2357) (punctuation 2355 . 2356) (semantic-list 2345 . 2354) (symbol 2338 . 2345) (punctuation 2337 . 2338) (punctuation 2335 . 2336) (punctuation 2334 . 2335) (semantic-list 2323 . 2333) (symbol 2316 . 2323) (punctuation 2315 . 2316) (punctuation 2305 . 2306) (punctuation 2304 . 2305) (semantic-list 2288 . 2303) (symbol 2281 . 2288) (punctuation 2280 . 2281) (punctuation 2278 . 2279) (punctuation 2277 . 2278) (semantic-list 2269 . 2276) (symbol 2262 . 2269) (punctuation 2261 . 2262) (punctuation 2259 . 2260) (punctuation 2258 . 2259) (semantic-list 2248 . 2257) (symbol 2241 . 2248) (punctuation 2240 . 2241))
       :lexical-table 
         '(("bitsizeof" (spp-arg-list ("x") 667 . 670) . ((semantic-list "(CHAR_BIT * sizeof(x))" 672 . 694)))
@@ -12700,7 +12837,7 @@
       :file "strbuf.h"
       :pointmax 6279
       :fsize 6278
-      :lastmodtime '(21197 64534 328716 344000)
+      :lastmodtime '(21214 9766 124017 831000)
       :unmatched-syntax '((TYPEDEF 3915 . 3922))
       :lexical-table 
         '(("STRBUF_H")
@@ -12841,7 +12978,7 @@
       :file "hash.h"
       :pointmax 1425
       :fsize 1424
-      :lastmodtime '(21197 64534 44716 353000)
+      :lastmodtime '(21214 9766 28017 829000)
       :unmatched-syntax nil
       :lexical-table 
         '(("HASH_H")
@@ -12975,7 +13112,7 @@
       :file "advice.h"
       :pointmax 967
       :fsize 966
-      :lastmodtime '(21197 64533 656716 368000)
+      :lastmodtime '(21214 9765 880017 826000)
       :unmatched-syntax '((VOID 850 . 854) (EXTERN 843 . 849))
       :lexical-table 
         '(("ADVICE_H")
@@ -13041,7 +13178,7 @@
       :file "gettext.h"
       :pointmax 1453
       :fsize 1455
-      :lastmodtime '(21197 64533 864716 361000)
+      :lastmodtime '(21214 9765 972017 828000)
       :unmatched-syntax nil
       :lexical-table 
         '(("use_gettext_poison" (spp-arg-list nil 960 . 962) . ((number "0" 963 . 964)))
@@ -13298,7 +13435,7 @@
       :file "convert.h"
       :pointmax 2217
       :fsize 2216
-      :lastmodtime '(21197 64533 840716 361000)
+      :lastmodtime '(21214 9765 964017 829000)
       :unmatched-syntax nil
       :lexical-table 
         '(("CONVERT_H")
@@ -13697,7 +13834,7 @@
       :file "object.h"
       :pointmax 3758
       :fsize 3757
-      :lastmodtime '(21197 64534 112716 351000)
+      :lastmodtime '(21214 9766 40017 830000)
       :unmatched-syntax '((TYPEDEF 3152 . 3159) (punctuation 825 . 826) (semantic-list 806 . 825) (TYPENAME 798 . 806) (punctuation 797 . 798) (CHAR 792 . 796) (CONST 786 . 791) (EXTERN 779 . 785))
       :lexical-table 
         '(("OBJECT_H")
@@ -13885,7 +14022,7 @@
       :file "tree.h"
       :pointmax 946
       :fsize 945
-      :lastmodtime '(21197 64535 92716 316000)
+      :lastmodtime '(21214 9766 284017 834000)
       :unmatched-syntax '((TYPEDEF 540 . 547))
       :lexical-table 
         '(("READ_TREE_RECURSIVE" . ((number "1" 538 . 539)))
@@ -13981,7 +14118,7 @@
       :file "decorate.h"
       :pointmax 401
       :fsize 400
-      :lastmodtime '(21197 64533 844716 360000)
+      :lastmodtime '(21214 9765 964017 829000)
       :unmatched-syntax nil
       :lexical-table 
         '(("DECORATE_H")
@@ -14112,7 +14249,7 @@
       :file "gpg-interface.h"
       :pointmax 722
       :fsize 721
-      :lastmodtime '(21197 64534 32716 354000)
+      :lastmodtime '(21214 9766 24017 829000)
       :unmatched-syntax nil
       :lexical-table 
         '(("GPG_INTERFACE_H")
@@ -14554,7 +14691,7 @@
       :file "string-list.h"
       :pointmax 4985
       :fsize 4984
-      :lastmodtime '(21197 64534 328716 344000)
+      :lastmodtime '(21214 9766 124017 831000)
       :unmatched-syntax '((TYPEDEF 958 . 965) (TYPEDEF 729 . 736) (TYPEDEF 104 . 111))
       :lexical-table 
         '(("for_each_string_list_item" (spp-arg-list ("item" "list") 1162 . 1173) . ((FOR "for" 1177 . 1180) (semantic-list "(item = (list)->items; item < (list)->items + (list)->nr; ++item)" 1181 . 1246)))
@@ -14653,7 +14790,7 @@
       :file "exec_cmd.c"
       :pointmax 3456
       :fsize 3307
-      :lastmodtime '(21197 64533 864716 361000)
+      :lastmodtime '(21214 9765 968017 829000)
       :unmatched-syntax nil
       :lexical-table 
         '(("MAX_ARGS" . ((number "32" 78 . 80)))
