@@ -133,7 +133,8 @@
     (goto-char (point-max))
     (insert "\n}")
     (setq e2 (point)))
-  (indent-region b e2 nil))
+  (indent-region b e2 nil)
+  (search-backward ") {"))
  
 (global-set-key (kbd "C-x M-w") 'wrap-text)
 
