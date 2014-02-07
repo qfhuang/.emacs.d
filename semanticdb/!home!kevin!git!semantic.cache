@@ -66,293 +66,256 @@
                         :type "int")
                         (reparse-symbol arg-sub-list) [1049 1065]))                  
                 :type "int")
-                nil [992 5341])
-            ("orig_argv" variable (:type "int") nil [5329 5339])
-            ("envchanged" variable
-               (:default-value "0"
-                :type "int")
-                nil [5402 5451])
-            ("ret" variable
-               (:default-value "0"
-                :type "int")
-                nil [5402 5451])
-            ("saved_errno" variable
-               (:default-value "errno"
-                :type "int")
-                nil [5402 5451])
-            ("subdir" variable
-               (:pointer 1
-                :constant-flag t
-                :type "char")
-                nil [5453 5472])
-            ("count" variable (:type "int") nil [5474 5498])
-            ("option_count" variable (:type "int") nil [5474 5498])
-            ("new_argv" variable
-               (:pointer 2
-                :constant-flag t
-                :type "char")
-                nil [5500 5522])
-            ("alias_command" variable
-               (:pointer 1
-                :constant-flag t
-                :type "char")
-                nil [5524 5550])
-            ("alias_string" variable
-               (:pointer 1
-                :type "char")
-                nil [5552 5571])
-            ("unused_nongit" variable (:type "int") nil [5573 5591])
-            ("subdir" variable
-               (:default-value "setup_git_directory_gently(&unused_nongit)"
-                :type "int")
-                nil [5594 5646])
-            ("alias_command" variable
-               (:default-value "(*argv)[0]"
-                :type "int")
-                nil [5649 5676])
-            ("alias_string" variable
-               (:default-value "alias_lookup(alias_command)"
-                :type "int")
-                nil [5678 5721])
-            ("die_errno" function
-               (:prototype-flag t
+                nil [992 5301])
+            ("handle_alias" function
+               (:typemodifiers ("static")
                 :arguments 
-                  ( ("" variable (:type ("subdir" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7285 7292]))                  
-                :type "int")
-                nil [7250 7293])
-            ("errno" variable
-               (:default-value "saved_errno"
-                :type "int")
-                nil [7296 7316])
-            ("ret" variable (:type "int") nil [7326 7330])
-            ("RUN_SETUP" variable (:constant-flag t) nil [7342 7351])
-            ("RUN_SETUP_GENTLY" variable (:constant-flag t) nil [7368 7384])
-            ("USE_PAGER" variable (:constant-flag t) nil [7400 7409])
-            ("NEED_WORK_TREE" variable (:constant-flag t) nil [7553 7567])
-            ("cmd" variable
-               (:pointer 1
-                :constant-flag t
-                :type "char")
-                nil [7598 7614])
-            ("fn" function
-               (:prototype-flag t
-                :function-pointer t
-                :arguments 
-                  ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [7626 7630])
-                    ("" variable
-                       (:pointer 2
+                  ( ("argcp" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [5327 5338])
+                    ("argv" variable
+                       (:pointer 3
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [7631 7645])
-                    ("" variable
+                        (reparse-symbol arg-sub-list) [5339 5358]))                  
+                :type "int")
+                nil [5303 7292])
+            ("RUN_SETUP" variable (:constant-flag t) nil [7302 7311])
+            ("RUN_SETUP_GENTLY" variable (:constant-flag t) nil [7328 7344])
+            ("USE_PAGER" variable (:constant-flag t) nil [7360 7369])
+            ("NEED_WORK_TREE" variable (:constant-flag t) nil [7513 7527])
+            ("cmd_struct" type
+               (:members 
+                  ( ("cmd" variable
                        (:pointer 1
                         :constant-flag t
                         :type "char")
-                        (reparse-symbol arg-sub-list) [7646 7659]))                  
-                :type "int")
-                nil [7616 7660])
-            ("option" variable (:type "int") nil [7662 7673])
-            ("status" variable (:type "int") nil [7755 7772])
-            ("help" variable (:type "int") nil [7755 7772])
-            ("st" variable (:type ("stat" type
-                 (:prototype t
-                  :type "struct")
-                  nil nil)) nil [7774 7789])
-            ("prefix" variable
-               (:pointer 1
-                :constant-flag t
-                :type "char")
-                nil [7791 7810])
-            ("prefix" variable
-               (:default-value "NULL"
-                :type "int")
-                nil [7813 7827])
-            ("strcmp" function
-               (:prototype-flag t
+                        (reparse-symbol classsubparts) [7558 7574])
+                    ("fn" function
+                       (:prototype-flag t
+                        :function-pointer t
+                        :arguments 
+                          ( ("" variable (:type "int") (reparse-symbol arg-sub-list) [7586 7590])
+                            ("" variable
+                               (:pointer 2
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7591 7605])
+                            ("" variable
+                               (:pointer 1
+                                :constant-flag t
+                                :type "char")
+                                (reparse-symbol arg-sub-list) [7606 7619]))                          
+                        :type "int")
+                        (reparse-symbol classsubparts) [7576 7620])
+                    ("option" variable (:type "int") (reparse-symbol classsubparts) [7622 7633]))                  
+                :type "struct")
+                nil [7537 7636])
+            ("run_builtin" function
+               (:typemodifiers ("static")
                 :arguments 
-                  ( ("" variable (:type ("argv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [7857 7864]))                  
+                  ( ("p" variable
+                       (:pointer 1
+                        :type ("cmd_struct" type
+                             (:prototype t
+                              :type "struct")
+                              nil nil))
+                        (reparse-symbol arg-sub-list) [7661 7682])
+                    ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [7683 7692])
+                    ("argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [7693 7711]))                  
                 :type "int")
-                nil [7850 7872])
-            ("commit_pager_choice" function
-               (:prototype-flag t
-                :type "int")
-                nil [8415 8437])
-            ("setup_work_tree" function
-               (:prototype-flag t
-                :type "int")
-                nil [8483 8501])
-            ("trace_argv_printf" function
-               (:prototype-flag t
-                :arguments 
-                  ( ("" variable (:type ("argv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8522 8527]))                  
-                :type "int")
-                nil [8504 8552])
-            ("fn" function
-               (:prototype-flag t
-                :arguments 
-                  ( ("" variable (:type ("argc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8570 8575])
-                    ("" variable (:type ("argv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8576 8581])
-                    ("" variable (:type ("prefix" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [8582 8589]))                  
-                :type "int")
-                nil [8567 8590])
-            ("status" variable (:type "int") nil [8613 8620])
-            ("die_errno" function
-               (:prototype-flag t
-                :type "int")
-                nil [8877 8923])
-            ("die" function
-               (:prototype-flag t
-                :type "int")
-                nil [8947 8995])
-            ("die_errno" function
-               (:prototype-flag t
-                :type "int")
-                nil [9019 9064])
-            ("i" variable (:type "int") nil [14176 14182])
-            ("cmd" variable
-               (:pointer 1
-                :constant-flag t
-                :default-value "argv[0]"
-                :type "char")
-                nil [14381 14407])
-            ("i" variable (:type "int") nil [14409 14415])
-            ("ext" variable
+                nil [7638 9037])
+            ("commands" variable
                (:dereference 1
                 :typemodifiers ("static")
-                :constant-flag t
-                :default-value "STRIP_EXTENSION"
-                :type "char")
-                nil [14417 14459])
-            ("cmd" variable
-               (:default-value "STRBUF_INIT"
-                :type ("strbuf" type
+                :default-value "{
+	{ \"add\", cmd_add, RUN_SETUP | NEED_WORK_TREE },
+	{ \"annotate\", cmd_annotate, RUN_SETUP },
+	{ \"apply\", cmd_apply, RUN_SETUP_GENTLY },
+	{ \"archive\", cmd_archive },
+	{ \"bisect--helper\", cmd_bisect__helper, RUN_SETUP },
+	{ \"blame\", cmd_blame, RUN_SETUP },
+	{ \"branch\", cmd_branch, RUN_SETUP },
+	{ \"bundle\", cmd_bundle, RUN_SETUP_GENTLY },
+	{ \"cat-file\", cmd_cat_file, RUN_SETUP },
+	{ \"check-attr\", cmd_check_attr, RUN_SETUP },
+	{ \"check-ignore\", cmd_check_ignore, RUN_SETUP | NEED_WORK_TREE },
+	{ \"check-mailmap\", cmd_check_mailmap, RUN_SETUP },
+	{ \"check-ref-format\", cmd_check_ref_format },
+	{ \"checkout\", cmd_checkout, RUN_SETUP | NEED_WORK_TREE },
+	{ \"checkout-index\", cmd_checkout_index,
+		RUN_SETUP | NEED_WORK_TREE},
+	{ \"cherry\", cmd_cherry, RUN_SETUP },
+	{ \"cherry-pick\", cmd_cherry_pick, RUN_SETUP | NEED_WORK_TREE },
+	{ \"clean\", cmd_clean, RUN_SETUP | NEED_WORK_TREE },
+	{ \"clone\", cmd_clone },
+	{ \"column\", cmd_column, RUN_SETUP_GENTLY },
+	{ \"commit\", cmd_commit, RUN_SETUP | NEED_WORK_TREE },
+	{ \"commit-tree\", cmd_commit_tree, RUN_SETUP },
+	{ \"config\", cmd_config, RUN_SETUP_GENTLY },
+	{ \"count-objects\", cmd_count_objects, RUN_SETUP },
+	{ \"credential\", cmd_credential, RUN_SETUP_GENTLY },
+	{ \"describe\", cmd_describe, RUN_SETUP },
+	{ \"diff\", cmd_diff },
+	{ \"diff-files\", cmd_diff_files, RUN_SETUP | NEED_WORK_TREE },
+	{ \"diff-index\", cmd_diff_index, RUN_SETUP },
+	{ \"diff-tree\", cmd_diff_tree, RUN_SETUP },
+	{ \"fast-export\", cmd_fast_export, RUN_SETUP },
+	{ \"fetch\", cmd_fetch, RUN_SETUP },
+	{ \"fetch-pack\", cmd_fetch_pack, RUN_SETUP },
+	{ \"fmt-merge-msg\", cmd_fmt_merge_msg, RUN_SETUP },
+	{ \"for-each-ref\", cmd_for_each_ref, RUN_SETUP },
+	{ \"format-patch\", cmd_format_patch, RUN_SETUP },
+	{ \"fsck\", cmd_fsck, RUN_SETUP },
+	{ \"fsck-objects\", cmd_fsck, RUN_SETUP },
+	{ \"gc\", cmd_gc, RUN_SETUP },
+	{ \"get-tar-commit-id\", cmd_get_tar_commit_id },
+	{ \"grep\", cmd_grep, RUN_SETUP_GENTLY },
+	{ \"hash-object\", cmd_hash_object },
+	{ \"help\", cmd_help },
+	{ \"index-pack\", cmd_index_pack, RUN_SETUP_GENTLY },
+	{ \"init\", cmd_init_db },
+	{ \"init-db\", cmd_init_db },
+	{ \"log\", cmd_log, RUN_SETUP },
+	{ \"ls-files\", cmd_ls_files, RUN_SETUP },
+	{ \"ls-remote\", cmd_ls_remote, RUN_SETUP_GENTLY },
+	{ \"ls-tree\", cmd_ls_tree, RUN_SETUP },
+	{ \"mailinfo\", cmd_mailinfo },
+	{ \"mailsplit\", cmd_mailsplit },
+	{ \"merge\", cmd_merge, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-base\", cmd_merge_base, RUN_SETUP },
+	{ \"merge-file\", cmd_merge_file, RUN_SETUP_GENTLY },
+	{ \"merge-index\", cmd_merge_index, RUN_SETUP },
+	{ \"merge-ours\", cmd_merge_ours, RUN_SETUP },
+	{ \"merge-recursive\", cmd_merge_recursive, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-recursive-ours\", cmd_merge_recursive, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-recursive-theirs\", cmd_merge_recursive, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-subtree\", cmd_merge_recursive, RUN_SETUP | NEED_WORK_TREE },
+	{ \"merge-tree\", cmd_merge_tree, RUN_SETUP },
+	{ \"mktag\", cmd_mktag, RUN_SETUP },
+	{ \"mktree\", cmd_mktree, RUN_SETUP },
+	{ \"mv\", cmd_mv, RUN_SETUP | NEED_WORK_TREE },
+	{ \"name-rev\", cmd_name_rev, RUN_SETUP },
+	{ \"notes\", cmd_notes, RUN_SETUP },
+	{ \"pack-objects\", cmd_pack_objects, RUN_SETUP },
+	{ \"pack-redundant\", cmd_pack_redundant, RUN_SETUP },
+	{ \"pack-refs\", cmd_pack_refs, RUN_SETUP },
+	{ \"patch-id\", cmd_patch_id },
+	{ \"pickaxe\", cmd_blame, RUN_SETUP },
+	{ \"prune\", cmd_prune, RUN_SETUP },
+	{ \"prune-packed\", cmd_prune_packed, RUN_SETUP },
+	{ \"push\", cmd_push, RUN_SETUP },
+	{ \"read-tree\", cmd_read_tree, RUN_SETUP },
+	{ \"receive-pack\", cmd_receive_pack },
+	{ \"reflog\", cmd_reflog, RUN_SETUP },
+	{ \"remote\", cmd_remote, RUN_SETUP },
+	{ \"remote-ext\", cmd_remote_ext },
+	{ \"remote-fd\", cmd_remote_fd },
+	{ \"repack\", cmd_repack, RUN_SETUP },
+	{ \"replace\", cmd_replace, RUN_SETUP },
+	{ \"rerere\", cmd_rerere, RUN_SETUP },
+	{ \"reset\", cmd_reset, RUN_SETUP },
+	{ \"rev-list\", cmd_rev_list, RUN_SETUP },
+	{ \"rev-parse\", cmd_rev_parse },
+	{ \"revert\", cmd_revert, RUN_SETUP | NEED_WORK_TREE },
+	{ \"rm\", cmd_rm, RUN_SETUP },
+	{ \"send-pack\", cmd_send_pack, RUN_SETUP },
+	{ \"shortlog\", cmd_shortlog, RUN_SETUP_GENTLY | USE_PAGER },
+	{ \"show\", cmd_show, RUN_SETUP },
+	{ \"show-branch\", cmd_show_branch, RUN_SETUP },
+	{ \"show-ref\", cmd_show_ref, RUN_SETUP },
+	{ \"stage\", cmd_add, RUN_SETUP | NEED_WORK_TREE },
+	{ \"status\", cmd_status, RUN_SETUP | NEED_WORK_TREE },
+	{ \"stripspace\", cmd_stripspace },
+	{ \"symbolic-ref\", cmd_symbolic_ref, RUN_SETUP },
+	{ \"tag\", cmd_tag, RUN_SETUP },
+	{ \"unpack-file\", cmd_unpack_file, RUN_SETUP },
+	{ \"unpack-objects\", cmd_unpack_objects, RUN_SETUP },
+	{ \"update-index\", cmd_update_index, RUN_SETUP },
+	{ \"update-ref\", cmd_update_ref, RUN_SETUP },
+	{ \"update-server-info\", cmd_update_server_info, RUN_SETUP },
+	{ \"upload-archive\", cmd_upload_archive },
+	{ \"upload-archive--writer\", cmd_upload_archive_writer },
+	{ \"var\", cmd_var, RUN_SETUP_GENTLY },
+	{ \"verify-pack\", cmd_verify_pack },
+	{ \"verify-tag\", cmd_verify_tag, RUN_SETUP },
+	{ \"version\", cmd_version },
+	{ \"whatchanged\", cmd_whatchanged, RUN_SETUP },
+	{ \"write-tree\", cmd_write_tree, RUN_SETUP },
+}"
+                :type ("cmd_struct" type
                      (:prototype t
                       :type "struct")
                       nil nil))
-                nil [15023 15055])
-            ("tmp" variable
-               (:pointer 1
-                :constant-flag t
-                :type "char")
-                nil [15057 15073])
-            ("status" variable (:type "int") nil [15075 15086])
-            ("use_pager" variable
-               (:default-value "check_pager_config(argv[0])"
+                nil [9039 14101])
+            ("is_builtin" function
+               (:arguments 
+                  ( ("s" variable
+                       (:pointer 1
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14118 14132]))                  
                 :type "int")
-                nil [15112 15152])
-            ("commit_pager_choice" function
-               (:prototype-flag t
-                :type "int")
-                nil [15154 15176])
-            ("strbuf_addf" function
-               (:prototype-flag t
+                nil [14103 14280])
+            ("handle_builtin" function
+               (:typemodifiers ("static")
                 :arguments 
-                  ( ("" variable (:type ("cmd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15192 15196])
-                    ("" variable (:type ("argv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15207 15214]))                  
-                :type "int")
-                nil [15179 15216])
-            ("tmp" variable
-               (:default-value "argv[0]"
-                :type "int")
-                nil [15406 15420])
-            ("buf" variable (:type "int") nil [15436 15440])
-            ("trace_argv_printf" function
-               (:prototype-flag t
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [14309 14318])
+                    ("argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14319 14337]))                  
+                :type "void")
+                nil [14282 14925])
+            ("execv_dashed_external" function
+               (:typemodifiers ("static")
                 :arguments 
-                  ( ("" variable (:type ("argv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15461 15466]))                  
-                :type "int")
-                nil [15443 15483])
-            ("status" variable
-               (:default-value "run_command_v_opt(argv, RUN_SILENT_EXEC_FAILURE | RUN_CLEAN_ON_EXIT)"
-                :type "int")
-                nil [15615 15693])
-            ("exit" function
-               (:prototype-flag t
+                  ( ("argv" variable
+                       (:pointer 2
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [14961 14979]))                  
+                :type "void")
+                nil [14927 15749])
+            ("run_argv" function
+               (:typemodifiers ("static")
                 :arguments 
-                  ( ("" variable (:type ("status" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15738 15745]))                  
+                  ( ("argcp" variable
+                       (:pointer 1
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [15771 15782])
+                    ("argv" variable
+                       (:pointer 3
+                        :constant-flag t
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [15783 15802]))                  
                 :type "int")
-                nil [15733 15746])
-            ("argv" variable
-               (:dereference 1
-                :default-value "tmp"
+                nil [15751 16219])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [16231 16240])
+                    ("av" variable
+                       (:pointer 2
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [16241 16251]))                  
                 :type "int")
-                nil [15749 15763])
-            ("strbuf_release" function
-               (:prototype-flag t
-                :arguments 
-                  ( ("" variable (:type ("cmd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [15782 15786]))                  
-                :type "int")
-                nil [15766 15787])
-            ("done_alias" variable
-               (:default-value "0"
-                :type "int")
-                nil [15846 15865])
-            ("done_alias" variable (:type "int") nil [16246 16257])
-            ("argv" variable
-               (:pointer 2
-                :constant-flag t
-                :default-value "(const char **) av"
-                :type "char")
-                nil [16295 16334])
-            ("cmd" variable
-               (:pointer 1
-                :constant-flag t
-                :type "char")
-                nil [16336 16352])
-            ("startup_info" variable
-               (:default-value "&git_startup_info"
-                :type "int")
-                nil [16355 16388])
-            ("cmd" variable
-               (:default-value "git_extract_argv0_path(argv[0])"
-                :type "int")
-                nil [16391 16429])
-            ("cmd" variable
-               (:default-value "\"git-help\""
-                :type "int")
-                nil [16443 16460])
-            ("sanitize_stdfds" function
-               (:prototype-flag t
-                :type "int")
-                nil [16666 16684])
-            ("git_setup_gettext" function
-               (:prototype-flag t
-                :type "int")
-                nil [16687 16707])
-            ("handle_options" function
-               (:prototype-flag t
-                :arguments 
-                  ( ("" variable (:type ("argv" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17234 17239])
-                    ("" variable (:type ("argc" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17241 17246])
-                    ("" variable (:type ("NULL" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [17247 17252]))                  
-                :type "int")
-                nil [17218 17253])
-            ("cmd" variable
-               (:default-value "argv[0]"
-                :type "int")
-                nil [17547 17561])
-            ("setup_path" function
-               (:prototype-flag t
-                :type "int")
-                nil [17780 17793])
-            ("fprintf" function
-               (:prototype-flag t
-                :arguments 
-                  ( ("" variable (:type ("stderr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18190 18197])
-                    ("" variable (:type ("cmd" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18236 18240])
-                    ("" variable (:type ("strerror" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [18241 18256]))                  
-                :type "int")
-                nil [18182 18258]))          
+                nil [16222 18232]))          
       :file "git.c"
-      :pointmax 18273
+      :pointmax 18233
       :fsize 18231
       :lastmodtime '(21214 9766 17 828000)
       :unmatched-syntax nil
       :lexical-table 
-        '(("RUN_SETUP" . ((semantic-list "(1<<0)" 7346 . 7352)))
-          ("USE_PAGER" . ((semantic-list "(1<<2)" 7404 . 7410)))
-          ("RUN_SETUP_GENTLY" . ((semantic-list "(1<<1)" 7378 . 7384)))
-          ("NEED_WORK_TREE" . ((semantic-list "(1<<3)" 7562 . 7568)))
+        '(("RUN_SETUP" . ((semantic-list "(1<<0)" 7260 . 7266)))
+          ("USE_PAGER" . ((semantic-list "(1<<2)" 7318 . 7324)))
+          ("RUN_SETUP_GENTLY" . ((semantic-list "(1<<1)" 7292 . 7298)))
+          ("NEED_WORK_TREE" . ((semantic-list "(1<<3)" 7476 . 7482)))
           )
 )
     (semanticdb-table "builtin.h"

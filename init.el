@@ -108,7 +108,7 @@
     (?\' _ "\'")  ;单引号
     (?\" _ "\"")　;双引号
     (?\( _ ")")   
-    (?\[ ?  _ " ]")
+    (?\[ _ "]")
     (?{ > _ \n ?} >)))
   (setq skeleton-pair t)
   (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
