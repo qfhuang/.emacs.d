@@ -29,9 +29,9 @@
       :tags 
         '( ("stdio.h" include (:system-flag t) nil [1 19])
             ("stdlib.h" include (:system-flag t) nil [20 39])
-            ("main" function (:type "int") nil [41 585]))          
+            ("main" function (:type "int") nil [41 586]))          
       :file "fgetc2.c"
-      :pointmax 586
+      :pointmax 587
       :fsize 597
       :lastmodtime '(21236 41071 270493 933000)
       :unmatched-syntax nil))
