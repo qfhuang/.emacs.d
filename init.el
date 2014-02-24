@@ -126,9 +126,9 @@
  
 (defun yyc/cflow-function (function-name)
   "Get call graph of inputed function. "
-  (interactive "sFunction name:\n")
- ; (interactive (list (car (senator-jump-interactive "Function name: "
- ;                                                   nil nil nil))))
+ ; (interactive "sFunction name:\n")
+ ; (interactive (list (car (senator-jump-interactive "Function name: " nil nil nil))))
+  (interactive (list (car (getfunc))))
   (setq cmd (format "cflow  -b --main=%s %s" function-name buffer-file-name))
   (setq cflow-buf-name (format "**cflow-%s:%s**"
                                (file-name-nondirectory buffer-file-name)
@@ -142,6 +142,12 @@
   (goto-char (point-min))
   (cflow-mode)
   )
+
+(defun getfunc()
+  (interactive)
+  (beginning-of-line)
+  (re-search-forward "[A-Za-z0-9_]*\(" nil t)
+  (list (buffer-substring (match-beginning 0)(- (match-end 0) 1))))
 
 ;; wrap text
 ;; printf();
@@ -243,6 +249,7 @@
 
 ;; install from melpa forked by alexott
 ;; solve the version depend on cedet
+;; M-x ecb-activate 
 (require 'ecb)
 (setq ecb-tip-of-the-day nil)
 (setq ecb-primary-secondary-mouse-buttons 'mouse-1--C-mouse-1) ;;设置可以使用鼠标点击各个窗口的东东
@@ -293,6 +300,8 @@
 (add-hook 'c-mode-hook 'my-cedet-hook) ;;使用 c-mode-common-hook 指针补全失效？
 
 ;;insall from melpa repository
+;;add -q option to cscope-indexer shell script 反向创建索引，提高速度
+;;sudo cscope-indexer -r 创建索引
 ;;(require 'xcscope)
 (add-hook 'c-mode-common-hook '(lambda() (require 'xcscope)))
 (cscope-setup) ;;打开cscope-minor-mode,才能显示cscope菜单与使用C-c s绑定的快捷键
