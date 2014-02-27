@@ -20,9 +20,9 @@
        '(
  
     ("org-mvm"
-           :base-directory "~/qfhuang.github.com/_orgposts" ;; Path to your org files.
+           :base-directory "~/qfhuang.github.com/org/" ;; Path to your org files.
            :base-extension "org"
-           :publishing-directory "~/qfhuang.github.com/_posts" ;; Path to your Jekyll project.
+           :publishing-directory "~/qfhuang.github.com/" ;; Path to your Jekyll project.
            :recursive t
            :publishing-function org-html-publish-to-html
            :headline-levels 6
@@ -36,7 +36,7 @@
      )
  
      ("org-static-mvm"
-           :base-directory "~/qfhuang.github.com/"
+           :base-directory "~/qfhuang.github.com/org/"
            :base-extension "css\\|js\\|png\\|jpg\\|ico\\|gif\\|pdf\\|mp3\\|flac\\|ogg\\|swf\\|php\\|markdown\\|md\\|html\\|htm\\|sh\\|xml\\|gz\\|bz2\\|vcf\\|zip\\|txt\\|tex\\|otf\\|ttf\\|eot\\|rb\\|yml\\|htaccess\\|gitignore"
            :publishing-directory "~/qfhuang.github.com/"
            :recursive t
@@ -62,21 +62,21 @@
   (global-set-key (kbd "C-c j P") 'jekyll-publish-post)
   (global-set-key (kbd "C-c j p") (lambda ()
      (interactive)
-     (find-file "~/qfhuang.github.com/_orgposts/")))
+     (find-file "~/qfhuang.github.com/org/_posts/")))
   (global-set-key (kbd "C-c j d") (lambda ()
      (interactive)
-     (find-file "~/qfhuang.github.com/_drafts/")))
+     (find-file "~/qfhuang.github.com/org/_drafts/")))
  
- (defvar jekyll-directory "/home/kevin/qfhuang.github.com/"
+ (defvar jekyll-directory "/home/kevin/qfhuang.github.com/org/"
    "Path to Jekyll blog.")
  (defvar jekyll-drafts-dir "_drafts/"
    "Relative path to drafts directory.")
- (defvar jekyll-posts-dir "_orgposts/"
+ (defvar jekyll-posts-dir "_posts/"
    "Relative path to posts directory.")
  (defvar jekyll-post-ext ".org"
    "File extension of Jekyll posts.")
  (defvar jekyll-post-template
-   "#+STARTUP: showall\n#+STARTUP: hidestars\n#+OPTIONS: H:2 num:nil tags:nil toc:nil timestamps:t\n#+BEGIN_HTML\n---\nlayout: post\ntitle: %s\nexcerpt: \ncategories:\n  -  \ntags:\n  -  \npublished: true\n---\n{%% include JB/setup %%}\n#+END_HTML\n** "
+   "#+STARTUP: showall\n#+STARTUP: hidestars\n#+OPTIONS: H:2 num:nil tags:nil toc:nil timestamps:t\n#+BEGIN_HTML\n---\nlayout: base\ntitle: %s\nexcerpt: \ncategories:\n  -  \ntags:\n  -  \npublished: true\n---\n#+END_HTML\n** "
    "Default template for Jekyll posts. %s will be replace by the post title.")
  
  (defun jekyll-make-slug (s)
@@ -129,7 +129,8 @@
        (kill-buffer nil)
        (find-file filename)
        (set-window-point (selected-window) old-point)
-       (org-publish "org-mvm")))))
+;;      (org-publish "org-mvm")
+       ))))
 
 ;; screenshot in org-mode
 ;; modified by gift.young@gmail.com
@@ -140,14 +141,14 @@
  (interactive)
  (setq filename
  (concat (make-temp-name
- (concat (file-name-directory (buffer-file-name)) "../images/" ) ) ".png"))
+ (concat (file-name-directory (buffer-file-name)) "../files/images/" ) ) ".png"))
  (if (file-accessible-directory-p (concat (file-name-directory
-(buffer-file-name)) "../images/"))
+(buffer-file-name)) "../files/images/"))
  nil
- (make-directory "../images"))
+ (make-directory "../files/images"))
  (call-process-shell-command "scrot" nil nil nil nil "-s" (concat
 "\"" filename "\"" ))
- (insert (concat "[[" "../images/" (file-name-nondirectory filename) "]]"))
+ (insert (concat "[[" "../files/images/" (file-name-nondirectory filename) "]]"))
  (org-display-inline-images)
  )
 
