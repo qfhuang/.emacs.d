@@ -76,7 +76,7 @@
  (defvar jekyll-post-ext ".org"
    "File extension of Jekyll posts.")
  (defvar jekyll-post-template
-   "#+STARTUP: showall\n#+STARTUP: hidestars\n#+OPTIONS: H:2 num:nil tags:nil toc:nil timestamps:t\n#+BEGIN_HTML\n---\nlayout: base\ntitle: %s\nexcerpt: \ncategories:\n  -  \ntags:\n  -  \npublished: true\n---\n#+END_HTML\n** "
+   "#+STARTUP: showall\n#+STARTUP: indent\n#+OPTIONS: H:6 num:nil tags:nil toc:nil timestamps:t\n#+BEGIN_HTML\n---\nlayout: post\ntitle: %s\nexcerpt: \ncategories:\n  -  \ntags:\n  -  \npublished: true\n---#+END_HTML\n* \n"
    "Default template for Jekyll posts. %s will be replace by the post title.")
  
  (defun jekyll-make-slug (s)
