@@ -11,7 +11,7 @@
 
 ;; Setting English Font
 (set-face-attribute
-'default nil :font "Menlo" :height 105)
+'default nil :font "Menlo" :height 100)
  
 ;; Chinese Font
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
