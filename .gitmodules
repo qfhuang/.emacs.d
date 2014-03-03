@@ -4,3 +4,7 @@
 [submodule "elpa/yasnippet-0.6.1/yasnippet-snippets"]
 	path = elpa/yasnippet-0.6.1/yasnippet-snippets
 	url = git://github.com/AndreaCrotti/yasnippet-snippets.git
+[submodule "elpa/yasnippet-0.6.1/yasmate"]
+	path = elpa/yasnippet-0.6.1/yasmate
+	url = git://github.com/capitaomorte/yasmate
+	

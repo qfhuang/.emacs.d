@@ -6,19 +6,12 @@
 (setq default-frame-alist
       '((height . 40)(width . 120)))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 98 :width normal)))))
-
 ;; all backups goto ~/.backups instead in the current directory
 (setq backup-directory-alist (quote (("." . "~/.backups"))))
 
 ;; Setting English Font
 (set-face-attribute
-'default nil :font "DejaVu Sans Mono")
+'default nil :font "Menlo" :height 105)
  
 ;; Chinese Font
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
@@ -56,7 +49,9 @@
 ;; yasnippet 0.6.1 on marmalade
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
-;; git submodule add git://github.com/AndreaCrotti/yasnippet-snippets.git elpa/yasnippet-0.6.1/yasnippet-snippets
+;; 创建子模块　git submodule add git://github.com/AndreaCrotti/yasnippet-snippets.git elpa/yasnippet-0.6.1/yasnippet-snippets
+;; 下载子模块　git submodule update --init --recursive
+;; No submodules errors,you can add to .gitmodules by manualy
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-0.6.1/yasnippet-snippets")
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-0.6.1/snippets")
 (yas/load-directory "~/.emacs.d/lisp/snippets") ;;自定义的模板保存路径
@@ -236,8 +231,7 @@
 
 ;;sbcl+slime for common lisp
 ;;sudo apt-get install sbcl
-;;git submodule add git://github.com/nablaone/slime lisp/slime/
-(add-to-list 'load-path "~/.emacs.d/lisp/slime/")  ; your SLIME directory
+(add-to-list 'load-path "~/.emacs.d/elpa/slime-20140302.1712")  ; your SLIME directory
 (setq inferior-lisp-program "/usr/bin/sbcl") ; your Lisp system
 (require 'slime)
 (slime-setup)
@@ -326,34 +320,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default bold shadow italic underline bold bold-italic bold])
- '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-day)))
  '(custom-safe-themes
    (quote
-    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
- '(ecb-source-path (quote (("/" "/"))))
- '(fci-rule-color "#2a2a2a")
- '(vc-annotate-background nil)
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#d54e53")
-     (40 . "#e78c45")
-     (60 . "#e7c547")
-     (80 . "#b9ca4a")
-     (100 . "#70c0b1")
-     (120 . "#7aa6da")
-     (140 . "#c397d8")
-     (160 . "#d54e53")
-     (180 . "#e78c45")
-     (200 . "#e7c547")
-     (220 . "#b9ca4a")
-     (240 . "#70c0b1")
-     (260 . "#7aa6da")
-     (280 . "#c397d8")
-     (300 . "#d54e53")
-     (320 . "#e78c45")
-     (340 . "#e7c547")
-     (360 . "#b9ca4a"))))
- '(vc-annotate-very-old-color nil))
-(put 'upcase-region 'disabled nil)
+    ("bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
