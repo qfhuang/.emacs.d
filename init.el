@@ -314,20 +314,44 @@
 (define-key global-map [(meta f10)] 'cscope-display-buffer-toggle)
 
 
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    ["#151515" "#ac4142" "#90a959" "#f4bf75" "#6a9fb5" "#aa759f" "#6a9fb5" "#e0e0e0"])
  '(ansi-term-color-vector
    [unspecified "#151515" "#ac4142" "#90a959" "#f4bf75" "#6a9fb5" "#aa759f" "#6a9fb5" "#e0e0e0"])
- '(custom-enabled-themes (quote (base16-default)))
+ '(custom-enabled-themes (quote (solarized-light)))
  '(custom-safe-themes
    (quote
-    ("cea6d15a8333e0c78e1e15a0524000de69aac2afa7bb6cf9d043a2627327844e" "7f04d2ed87ac8d7083c5340de4588650af742c77f4622c33817dbf2d3bd62970" "407ce87f923167d47226c99fcea5fd2df27495fa9e57e253a2546eaa41d58cf4" "741fadabb05ff1d2fa9d0e9654c238492552e86a63a1b270b85d8b784dde2fc2" "7fbe360a59e31f634196d564360cff8481e528ebba7f779799941e8474c097ea" "b3b7623b883f85759bc029914c7b105ccb73ee1d3ae7d37fc54d3da4de20e6b8" "bb5127534311ed61b9ecbf11f3fb3e0d554363e9bdd4d933b402243e28a8966a" "c7bb61523f58853eda8ef15cd9e4aef317a9acdb36a321acbd055058cf4bd4d9" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" default))))
+    ("1e7e097ec8cb1f8c3a912d7e1e0331caeed49fef6cff220be63bd2a6ba4cc365" "de2c46ed1752b0d0423cde9b6401062b67a6a1300c068d5d7f67725adc6c3afb" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "cea6d15a8333e0c78e1e15a0524000de69aac2afa7bb6cf9d043a2627327844e" "7f04d2ed87ac8d7083c5340de4588650af742c77f4622c33817dbf2d3bd62970" "407ce87f923167d47226c99fcea5fd2df27495fa9e57e253a2546eaa41d58cf4" "741fadabb05ff1d2fa9d0e9654c238492552e86a63a1b270b85d8b784dde2fc2" "7fbe360a59e31f634196d564360cff8481e528ebba7f779799941e8474c097ea" "b3b7623b883f85759bc029914c7b105ccb73ee1d3ae7d37fc54d3da4de20e6b8" "bb5127534311ed61b9ecbf11f3fb3e0d554363e9bdd4d933b402243e28a8966a" "c7bb61523f58853eda8ef15cd9e4aef317a9acdb36a321acbd055058cf4bd4d9" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" default)))
+ '(fci-rule-color "#eee8d5")
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#dc322f")
+     (40 . "#cb4b16")
+     (60 . "#b58900")
+     (80 . "#859900")
+     (100 . "#2aa198")
+     (120 . "#268bd2")
+     (140 . "#d33682")
+     (160 . "#6c71c4")
+     (180 . "#dc322f")
+     (200 . "#cb4b16")
+     (220 . "#b58900")
+     (240 . "#859900")
+     (260 . "#2aa198")
+     (280 . "#268bd2")
+     (300 . "#d33682")
+     (320 . "#6c71c4")
+     (340 . "#dc322f")
+     (360 . "#cb4b16"))))
+ '(vc-annotate-very-old-color nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
