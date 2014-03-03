@@ -148,7 +148,7 @@
  (make-directory "../files/images"))
  (call-process-shell-command "scrot" nil nil nil nil "-s" (concat
 "\"" filename "\"" ))
- (insert (concat "[[" "../files/images/" (file-name-nondirectory filename) "]]"))
+ (insert (concat "[[" "http://qfhuang.github.io/files/images/" (file-name-nondirectory filename) "]]"))
  (org-display-inline-images)
  )
 
