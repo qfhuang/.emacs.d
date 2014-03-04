@@ -1,7 +1,7 @@
 ;; emacs 24.3.50
 (tool-bar-mode 0)
 (menu-bar-mode 0)
-(scroll-bar-mode 0)
+(scroll-bar-mode 1)
 
 (setq default-frame-alist
       '((height . 40)(width . 120)))
