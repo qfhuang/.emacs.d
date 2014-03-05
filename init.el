@@ -323,7 +323,7 @@
  '(custom-enabled-themes (quote (base16-default)))
  '(custom-safe-themes
    (quote
-    ("c7bb61523f58853eda8ef15cd9e4aef317a9acdb36a321acbd055058cf4bd4d9" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" default))))
+    ("b3b7623b883f85759bc029914c7b105ccb73ee1d3ae7d37fc54d3da4de20e6b8" "bb5127534311ed61b9ecbf11f3fb3e0d554363e9bdd4d933b402243e28a8966a" "c7bb61523f58853eda8ef15cd9e4aef317a9acdb36a321acbd055058cf4bd4d9" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
