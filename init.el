@@ -323,7 +323,7 @@
  '(custom-enabled-themes (quote (base16-default)))
  '(custom-safe-themes
    (quote
-    ("b3b7623b883f85759bc029914c7b105ccb73ee1d3ae7d37fc54d3da4de20e6b8" "bb5127534311ed61b9ecbf11f3fb3e0d554363e9bdd4d933b402243e28a8966a" "c7bb61523f58853eda8ef15cd9e4aef317a9acdb36a321acbd055058cf4bd4d9" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" default))))
+    ("741fadabb05ff1d2fa9d0e9654c238492552e86a63a1b270b85d8b784dde2fc2" "7fbe360a59e31f634196d564360cff8481e528ebba7f779799941e8474c097ea" "b3b7623b883f85759bc029914c7b105ccb73ee1d3ae7d37fc54d3da4de20e6b8" "bb5127534311ed61b9ecbf11f3fb3e0d554363e9bdd4d933b402243e28a8966a" "c7bb61523f58853eda8ef15cd9e4aef317a9acdb36a321acbd055058cf4bd4d9" "1affe85e8ae2667fb571fc8331e1e12840746dae5c46112d5abb0c3a973f5f5a" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
