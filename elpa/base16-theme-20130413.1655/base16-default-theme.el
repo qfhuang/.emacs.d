@@ -10,7 +10,7 @@
 (let ((background "#202020")
       (current-line "#505050")
       (selection "#b0b0b0")
-      (foreground "#e0e0e0")
+      (foreground "#b0b0b0") ;;#e0e0e0
       (comment "#b0b0b0")
       (cursor "#e0e0e0")
       (red "#ac4142")
