@@ -313,15 +313,16 @@
 (define-key global-map [(meta f9)]  'cscope-display-buffer)
 (define-key global-map [(meta f10)] 'cscope-display-buffer-toggle)
 
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (base16-railscasts)))
+ '(custom-enabled-themes (quote (hemisu-light)))
  '(custom-safe-themes
    (quote
-    ("f41fd682a3cd1e16796068a2ca96e82cfd274e58b978156da0acce4d56f2b0d5" default))))
+    ("c1fb68aa00235766461c7e31ecfc759aa2dd905899ae6d95097061faeb72f9ee" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
