@@ -11,7 +11,7 @@
 
 ;; Setting English Font
 ;; M-x describe-font
-(set-default-font "-bitstream-Menlo-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1")
+(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1")
  
 ;; Chinese Font
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
