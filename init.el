@@ -71,7 +71,8 @@
 
 ;; c-style comment for asm-mode 
 (add-hook 'asm-mode-hook 
-      (lambda () (setq comment-start "/* " comment-end " */")))
+	  (lambda () (setq comment-start "/* " comment-end " */")))
+(add-hook 'asm-mode-hook 'auto-complete-mode)
 
 ;; c-style setup http://arttecher.com/blog/2013/09/20/linux-kernel-coding-style/
 (defun linux-c-mode ()
