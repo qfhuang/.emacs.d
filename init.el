@@ -9,15 +9,21 @@
 ;; all backups goto ~/.backups instead in the current directory
 (setq backup-directory-alist (quote (("." . "~/.backups"))))
 
-;; Setting English Font
-;; M-x describe-font
-(set-default-font "-unknown-DejaVu Sans Mono-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1")
- 
-;; Chinese Font
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font)
-                      charset
-                      (font-spec :family "Microsoft YaHei" :size 12)))
+;;完全解决字体真正等宽，http://oinil.blogspot.com/2013/09/emacs.html
+ (create-fontset-from-fontset-spec
+ "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-fontset-myfontset")
+ (set-fontset-font "fontset-myfontset" 'han "WenQuanYi Micro Hei Mono")
+ (add-to-list 'default-frame-alist '(font . "fontset-myfontset"))
+
+;; ;; Setting English Font
+;; ;; M-x describe-font
+;; ;;(set-default-font "Monospace-12")
+;; (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Zen Hei" . 1.2)))
+;; ;; Chinese Font
+;; (dolist (charset '(kana han symbol cjk-misc bopomofo))
+;;     (set-fontset-font (frame-parameter nil 'font)
+;;                       charset
+;;                       (font-spec :family "Microsoft YaHei" :size 12)))
 
 
 ;; ibus-mode
@@ -330,3 +336,4 @@
 ;;  ;; Your init file should contain only one such instance.
 ;;  ;; If there is more than one, they won't work right.
 ;;  )
+(put 'upcase-region 'disabled nil)
